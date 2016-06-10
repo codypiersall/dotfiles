@@ -1,0 +1,22 @@
+[ui]
+# Name data to appear in commits
+username = Cody Piersall <codypi@ou.edu>
+ssh = ssh -C
+
+[alias]
+hgrc = !$EDITOR ~/.hgrc
+
+[extensions]
+extdiff =
+convert =
+purge =
+color =
+pager =
+
+[extdiff]
+cmd.meld =
+cmd.vimdiff =
+
+[pager]
+pager = LESS='FRSXQ' less
+attend = annotate, log, cat, diff

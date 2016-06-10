@@ -1,0 +1,21 @@
+
+[alias]
+	ci = commit
+	st = status -u
+	meld = difftool -y --dir-diff
+[core]
+	editor = vim
+[diff]
+	tool = meld
+[difftool "meld"]
+	cmd = meld \"$LOCAL\" \"$REMOTE\"
+[push]
+	default = simple
+[color]
+	ui = true
+[credential]
+	helper = cache --timeout=360000
+[http]
+	sslverify = false
+[include]
+    path = .gitconfig_local
