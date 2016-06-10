@@ -1,3 +1,4 @@
+#! /usr/bin/env python
 # Makes symlinks in $HOME for all the files in this directory (except this one)
 from __future__ import print_function
 import os
