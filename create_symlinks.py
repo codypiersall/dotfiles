@@ -5,7 +5,7 @@ import os
 
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-EXCLUDE = {'.', '..', __file__}
+EXCLUDE = {'.', '..', '.git', __file__}
 HOME = os.environ['HOME']
 
 EXCLUDE_ENDINGS = ('~', '.un')
