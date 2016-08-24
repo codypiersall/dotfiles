@@ -1,9 +1,10 @@
 # set up oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="avit"
-plugins=(git ubuntu vim)
+ZSH_THEME="robbyrussell"
+plugins=(ubuntu git vim)
+
 source $ZSH/oh-my-zsh.sh
-#
+
 autoload -U zmv
 
 export KEYTIMEOUT=10
@@ -12,7 +13,7 @@ export _current_dir="%F{blue}%~%f"
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export EDITOR=vim
 
-bindkey -M viins 'jk' vi-cmd-mode
+#bindkey -M viins 'jk' vi-cmd-mode
 bindkey '\e[A' history-beginning-search-backward
 bindkey '\e[B' history-beginning-search-forward
 
