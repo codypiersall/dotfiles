@@ -1,6 +1,6 @@
 # set up oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
+ZSH_THEME="blinks"
 plugins=(ubuntu git vim)
 
 source $ZSH/oh-my-zsh.sh
