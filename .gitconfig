@@ -19,3 +19,6 @@
 	sslverify = false
 [include]
     path = .gitconfig_local
+[user]
+	email = cody@arrc.ou.edu
+	name = Cody Piersall
