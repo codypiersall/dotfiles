@@ -1,9 +1,16 @@
 # set up oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="blinks"
+export ZSH_CUSTOM="$HOME/.zsh_custom"
+ZSH_THEME="mine"
 plugins=(ubuntu git vim)
 
 source $ZSH/oh-my-zsh.sh
+
+# python virtualenv stuff
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export WORKON_HOME=~/.envs
+mkdir -p $WORKON_HOME
+source /usr/local/bin/virtualenvwrapper.sh
 
 autoload -U zmv
 
