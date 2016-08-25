@@ -17,6 +17,7 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/SWIG-syntax'
 Plugin 'vim-scripts/mako.vim'
 Plugin 'LucHermitte/lh-vim-lib'
+Plugin 'embear/vim-localvimrc'
 Plugin 'LucHermitte/local_vimrc'
 Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
@@ -157,3 +158,8 @@ if has("autocmd")
 endif
 
 command! -nargs=1 Property call PropertyFunction(<q-args>)
+
+let g:localvimrc_sandbox = 0
+let g:localvimrc_ask = 0
+set backup
+set writebackup
