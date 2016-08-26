@@ -3,6 +3,8 @@
 	ci = commit
 	st = status -u
 	meld = difftool -y --dir-diff
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
 [core]
 	editor = vim
 [diff]
