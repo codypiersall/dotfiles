@@ -10,7 +10,10 @@ source $ZSH/oh-my-zsh.sh
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export WORKON_HOME=~/.envs
 mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+
+if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 autoload -U zmv
 
