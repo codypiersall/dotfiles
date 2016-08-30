@@ -56,6 +56,7 @@ alias f=fg
 alias j=jobs
 alias mmv='noglob zmv -W'
 alias zc='setopt noglob; zc_'
+alias tmux0='tmuxp load 0'
 
 # Any changes that shouldn't be tracked can go in the local zshrc.
 source "$HOME/.zshrc_local"
