@@ -50,7 +50,7 @@ function pathadd() {
 alias pgrep='pgrep -l'
 alias start_rpm_server='cd ~/yocto/poky/build/tmp/deploy/rpm; python -m SimpleHTTPServer'
 alias glogc='glog --color=always'
-alias glogch='glog --color=always | head'
+alias glogh='glog --color=always | head'
 alias lsd='ls -ald *'
 alias f=fg
 alias j=jobs

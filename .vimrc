@@ -163,3 +163,4 @@ let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
 set backup
 set writebackup
+set autochdir
