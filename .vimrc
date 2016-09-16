@@ -16,12 +16,11 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/SWIG-syntax'
 Plugin 'vim-scripts/mako.vim'
-Plugin 'LucHermitte/lh-vim-lib'
 Plugin 'embear/vim-localvimrc'
-Plugin 'LucHermitte/local_vimrc'
 Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'isRuslan/vim-es6'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
