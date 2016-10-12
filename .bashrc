@@ -2,7 +2,7 @@
 export WORKON_HOME=$HOME/.venvs
 
 parent="$(ps -o comm= $PPID)"
-if [ "$parent" = "init" -a -t 1 -a -e /mnt/c ]; then
+if [ \( "$parent" = "init" -o "$parent" = "tmux" \) -a -t 1 -a -e /mnt/c ]; then
     exec zsh
 fi
 
