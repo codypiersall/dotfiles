@@ -9,6 +9,7 @@ source $ZSH/oh-my-zsh.sh
 # python virtualenv stuff
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export WORKON_HOME=~/.envs
+export PROJECT_HOME=~/Dev
 mkdir -p $WORKON_HOME
 
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
