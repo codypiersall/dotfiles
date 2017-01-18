@@ -21,6 +21,14 @@ Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'isRuslan/vim-es6'
 Plugin 'scrooloose/nerdtree'
+
+Plugin 'eparreno/vim-l9'
+Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'jamis/fuzzyfinder_textmate'
+Plugin 'jamis/fuzzy_file_finder'
+Plugin 'rust-lang/rust.vim'
+"Plugin 'rhysd/committia.vim'
+
 "Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -174,4 +182,22 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_verilog_checkers = ['iverilog']
+
+" FuzzyFinder stuff, taken from http://stackoverflow.com/a/17277011/1612701
+" Truth be told, I don't remember what these do, but I must have
+" found them necessary back when I installed fuzzyfinder years ago
+let s:slash = '[/\\]'
+let s:startname = '(^|'.s:slash.')'
+let s:endname = '($|'.s:slash.')'
+" directories and extensions to ignore when listing files
+" these contain a lot of Python-isms, yours will probably vary
+let s:extension = '\.bak|\.dll|\.exe|\.o|\.pyc|\.pyo|\.swp|\.swo|\~'
+let s:dirname = 'build|deploy|dist|vms|\.bzr|\.git|\.hg|\.svn|.+\.egg-info'
+let g:fuf_file_exclude = '\v'.'('.s:startname.'('.s:dirname.')'.s:endname.')|(('.s:extension.')$)'
+let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
+
+" limit number of displayed matches
+" (makes response instant even on huge source trees)
+let g:fuf_enumeratingLimit = 60
+
 
