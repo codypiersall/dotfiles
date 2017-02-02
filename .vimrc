@@ -38,6 +38,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Treat markdown files right.
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.html setlocal shiftwidth=2 tabstop=2 textwidth=0
+au BufRead,BufNewFile *.v setlocal shiftwidth=2 tabstop=2
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 
@@ -136,10 +137,15 @@ nnoremap <Leader>z <C-z>
 
 nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
+nnoremap <Leader>f :FufFile **/<CR>
+nnoremap <Leader>b :FufBuffer<CR>
+nnoremap <Leader>t :FufTag<CR>
+
 
 " These are the generated ctags for the Linux source.
 set tags+=/usr/src/kernel/tags
 au BufNewFile,BufRead *.i set filetype=swig
+au BufNewFile,BufRead *.sv set filetype=verilog
 
 let mapleader=","
 runtime macros/matchit.vim
@@ -170,7 +176,6 @@ let g:localvimrc_sandbox = 0
 let g:localvimrc_ask = 0
 set backup
 set writebackup
-set autochdir
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -181,7 +186,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_verilog_checkers = ['iverilog']
+"let g:syntastic_verilog_checkers = ['iverilog']
 
 " FuzzyFinder stuff, taken from http://stackoverflow.com/a/17277011/1612701
 " Truth be told, I don't remember what these do, but I must have
