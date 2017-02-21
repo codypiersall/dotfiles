@@ -1,0 +1,23 @@
+session_name: standard
+windows:
+- focus: 'true'
+  layout: tiled
+  options:
+    automatic-rename: 'off'
+  panes:
+    - shell_command:
+      - ssh solidpc
+      - workon wni35
+      - ssh microzed
+    - shell_command:
+      - ssh solidpc
+      - workon wni35
+    - shell_command:
+      - ssh solidpc
+      - workon wni35
+      - ssh microzed
+    - shell_command:
+      - ssh solidpc
+      - workon wni35
+  start_directory: ''
+  window_name: tmuxp
