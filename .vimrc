@@ -30,6 +30,8 @@ Plugin 'vim-scripts/FuzzyFinder'
 Plugin 'jamis/fuzzyfinder_textmate'
 Plugin 'jamis/fuzzy_file_finder'
 Plugin 'rust-lang/rust.vim'
+Plugin 'lambdalisue/vim-cython-syntax'
+Plugin 'justinmk/vim-syntax-extra'
 "Plugin 'rhysd/committia.vim'
 
 "Plugin 'klen/python-mode'
@@ -115,6 +117,8 @@ set splitbelow
 set splitright
 set hidden
 
+set hidden
+
 function! Bdd_()
     execute ':bp | bd #'
 endfunction
@@ -151,7 +155,7 @@ nnoremap <Leader>t :FufTag<CR>
 
 
 " These are the generated ctags for the Linux source.
-set tags+=/usr/src/kernel/tags
+set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
 au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.sv set filetype=verilog
 
@@ -212,5 +216,9 @@ let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
 " limit number of displayed matches
 " (makes response instant even on huge source trees)
 let g:fuf_enumeratingLimit = 60
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" YouCompleteMe options
+let g:ycm_confirm_extra_conf = 0
 
 
