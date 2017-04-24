@@ -1,0 +1,18 @@
+session_name: standard
+windows:
+- focus: 'true'
+  layout: tiled
+  options:
+    automatic-rename: 'off'
+  panes:
+    - shell_command:
+      - ssh geofence
+    - shell_command:
+      - ssh geofence
+    - shell_command:
+      - ssh geofence
+      - jupyter notebook
+    - shell_command:
+      - ssh geofence
+      - ./wni_process.py nanologger
+  window_name: tmuxp
