@@ -76,6 +76,7 @@ alias mmv='noglob zmv -W'
 alias zc='setopt noglob; zc_'
 alias vless='vim -u /usr/share/vim/vim74/macros/less.vim -'
 alias tmux0='tmuxp load 0'
+alias httpserver='python -m http.server'
 
 # Any changes that shouldn't be tracked can go in the local zshrc.
 source "$HOME/.zshrc_local"
