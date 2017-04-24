@@ -17,10 +17,13 @@ Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/SWIG-syntax'
 Plugin 'vim-scripts/mako.vim'
 Plugin 'embear/vim-localvimrc'
-Plugin 'ervandew/supertab'
+"Plugin 'ervandew/supertab'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'isRuslan/vim-es6'
 Plugin 'scrooloose/nerdtree'
+" support for Sphinx style rst files.
+Plugin 'Rykka/riv.vim'
 
 Plugin 'eparreno/vim-l9'
 Plugin 'vim-scripts/FuzzyFinder'
@@ -110,6 +113,7 @@ set ruler
 set backspace=2 " Let backspace delete newlines (\n)
 set splitbelow
 set splitright
+set hidden
 
 function! Bdd_()
     execute ':bp | bd #'
@@ -123,6 +127,10 @@ nnoremap <Leader>j <C-W><C-J>
 nnoremap <Leader>k <C-W><C-K>
 nnoremap <Leader>l <C-W><C-L>
 nnoremap <Leader>h <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :bn<CR>
