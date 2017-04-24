@@ -219,6 +219,8 @@ let g:fuf_enumeratingLimit = 60
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " YouCompleteMe options
+" autoload .ycm_extra_conf file (do not ask for confirmation)
 let g:ycm_confirm_extra_conf = 0
-
+" the global
+let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
 
