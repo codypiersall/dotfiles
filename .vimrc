@@ -101,11 +101,12 @@ set formatoptions=c,q,r,t " This is a sequence of letters which describes how
                     " t         Auto-wrap text using textwidth (does not apply
                     "           to comments)
 
-" backspaces and cursor keys wrap too
-set whichwrap+=b,s,[,]
+set whichwrap+=b,s,[,] " backspaces and cursor keys wrap too
 
-" enable the use of a mouse
-set mouse=a
+set mouse=a         " enable the use of a mouse
+
+set wildmode=longest,list,full  "bash-like completion
+set wildmenu        " tab-completion menu.
 
 inoremap jk <Esc>
 filetype plugin indent on
