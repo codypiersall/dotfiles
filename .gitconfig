@@ -5,11 +5,12 @@
 	meld = difftool -y --dir-diff
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
+	vimdiff = difftool
 [core]
 	editor = vim
     autocrlf = input
 [diff]
-	tool = meld
+	tool = vimdiff
 [difftool "meld"]
 	cmd = meld \"$LOCAL\" \"$REMOTE\"
 [push]
@@ -31,3 +32,5 @@
     username = codypiersall
 [credential "https://git.arrc.ou.edu"]
     username = pier3595
+[difftool]
+	prompt = false
