@@ -1,6 +1,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let g:use_ale = 1
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -11,7 +12,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/syntastic'
+if g:use_ale
+    Plugin 'w0rp/ale'
+else
+    Plugin 'scrooloose/syntastic'
+endif
+
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/SWIG-syntax'
@@ -190,16 +196,26 @@ let g:localvimrc_ask = 0
 set backup
 set writebackup
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+if g:use_ale
+    let g:ale_sign_column_always = 1
+    let g:ale_open_list = 1
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+    let g:ale_lint_on_text_changed = 'never'
+else
+    set statusline+=%#warningmsg#
+    set statusline+=%{SyntasticStatuslineFlag()}
+    set statusline+=%*
 
-"let g:syntastic_verilog_checkers = ['iverilog']
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+
+    let g:syntastic_python_python_exec = 'python3'
+    "let g:syntastic_verilog_checkers = ['iverilog']
+    let g:syntastic_python_checkers = []
+endif
+
 
 " FuzzyFinder stuff, taken from http://stackoverflow.com/a/17277011/1612701
 " Truth be told, I don't remember what these do, but I must have
@@ -224,4 +240,5 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:ycm_confirm_extra_conf = 0
 " the global
 let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
+let g:ycm_python_binary_path = 'python'
 
