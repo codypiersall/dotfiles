@@ -67,15 +67,31 @@ function cleanup() {
     )
 }
 
+_gotoerrmsg() {
+    echo >&2 "ERROR: $funcstack[2] requires an argument"
+}
+
 function goto() {
+    if [ $# -lt 1 ]; then
+        print -rl -- $(cd  ~/goto; ls *[^~])
+        return
+    fi
     cd "$(cat ~/goto/$1)"
 }
 
 function setgoto() {
+    if [ $# -lt 1 ]; then
+        _gotoerrmsg
+        return
+    fi
     pwd > ~/goto/$1
 }
 
 function rmgoto() {
+    if [ $# -lt 1 ]; then
+        _gotoerrmsg
+        return
+    fi
     rm ~/goto/$1
 }
 
