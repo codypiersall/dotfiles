@@ -6,7 +6,7 @@ import sys
 
 
 THIS_DIR = os.path.dirname(os.path.abspath(__file__))
-EXCLUDE = {'.', '..', '.git', __file__, '.gitignore'}
+EXCLUDE = {'.', '..', '.git', __file__, '.gitignore', 'install.sh'}
 HOME = os.environ['HOME']
 
 EXCLUDE_ENDINGS = ('~', '.un')
