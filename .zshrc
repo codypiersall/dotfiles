@@ -109,7 +109,5 @@ alias tmux0='tmuxp load 0'
 alias httpserver='python -m http.server'
 alias gst='git status --porcelain'
 
-autoload -U compinit
-compinit -u
 # Any changes that shouldn't be tracked can go in the local zshrc.
 source "$HOME/.zshrc_local"
