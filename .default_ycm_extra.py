@@ -4,7 +4,7 @@ def FlagsForFile(filename, **kwargs):
     """
 
     """
-    ext = os.path.splitext()[1]
+    ext = os.path.splitext(filename)[1]
 
     if ext == '.c':
         lang = 'c'
