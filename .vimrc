@@ -49,6 +49,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Treat markdown files right.
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.html setlocal shiftwidth=2 tabstop=2 textwidth=0
+au BufRead,BufNewFile *.h set filetype=c
 au BufRead,BufNewFile *.v setlocal shiftwidth=2 tabstop=2
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
@@ -157,8 +158,9 @@ nnoremap <Leader>z <C-z>
 nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
 nnoremap <Leader>f :FufFile **/<CR>
-nnoremap <Leader>b :FufBuffer<CR>
 nnoremap <Leader>t :FufTag<CR>
+"nnoremap <Leader>b :FufBuffer<CR>
+nnoremap <Leader>b :ls<CR>:b<Space>
 
 
 " These are the generated ctags for the Linux source.
@@ -199,8 +201,11 @@ set writebackup
 if g:use_ale
     let g:ale_sign_column_always = 1
     let g:ale_open_list = 1
-
     let g:ale_lint_on_text_changed = 'never'
+
+    let g:ale_linters = {
+        \ 'python': ['flake8'],
+    \}
 else
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -211,9 +216,9 @@ else
     let g:syntastic_check_on_open = 1
     let g:syntastic_check_on_wq = 0
 
-    let g:syntastic_python_python_exec = 'python3'
+    let g:syntastic_python_python_exec = 'python'
     "let g:syntastic_verilog_checkers = ['iverilog']
-    let g:syntastic_python_checkers = []
+    "let g:syntastic_python_checkers = []
 endif
 
 
@@ -241,4 +246,7 @@ let g:ycm_confirm_extra_conf = 0
 " the global
 let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
 let g:ycm_python_binary_path = 'python'
+
+highlight link YcmErrorSection Error
+highlight link ALEError Error
 
