@@ -95,7 +95,6 @@ function rmgoto() {
     rm ~/goto/$1
 }
 
-alias pgrep='pgrep -l'
 alias glogc='glog --color=always'
 alias glogh='glog --color=always | head'
 alias lsd='ls -ald *'
