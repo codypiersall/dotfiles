@@ -13,7 +13,7 @@ def FlagsForFile(filename, **kwargs):
     else:
         return {'flags': []}
 
-    flags = ['-x', lang, '-Wall', '-Wextra', '-Werror']
+    flags = ['-x', lang, '-Wall', '-Wextra', '-Werror', '-std=c99']
 
     return {'flags': flags}
 
