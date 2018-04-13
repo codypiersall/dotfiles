@@ -34,3 +34,5 @@
     username = pier3595
 [difftool]
 	prompt = false
+[diff "astextplain"]
+    textconv = astextplain
