@@ -206,6 +206,7 @@ if g:use_ale
     let g:ale_linters = {
         \ 'python': ['flake8'],
     \}
+    let g:ale_python_flake8_options = '--ignore E501,W391'
 else
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
