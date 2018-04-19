@@ -6,4 +6,4 @@ git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 sudo apt-get install poppler-utils
 
 python3 ./create_symlinks.py -f
-
+touch ~/.zshrc_local
