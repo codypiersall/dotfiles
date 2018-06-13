@@ -251,3 +251,9 @@ let g:ycm_python_binary_path = 'python'
 highlight link YcmErrorSection Error
 highlight link ALEError Error
 
+function PyFile()
+    setlocal foldmethod=indent
+    normal zR
+endfunction
+
+au BufNewFile,BufRead *.py call PyFile()
