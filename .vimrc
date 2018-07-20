@@ -50,7 +50,7 @@ autocmd BufWritePre * :%s/\s\+$//e
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.html setlocal shiftwidth=2 tabstop=2 textwidth=0
 au BufRead,BufNewFile *.h set filetype=c
-au BufRead,BufNewFile *.v setlocal shiftwidth=2 tabstop=2
+au BufRead,BufNewFile *.v,*.sv setlocal shiftwidth=2 tabstop=2
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 
@@ -166,7 +166,7 @@ nnoremap <Leader>b :ls<CR>:b<Space>
 " These are the generated ctags for the Linux source.
 set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
 au BufNewFile,BufRead *.i set filetype=swig
-au BufNewFile,BufRead *.sv set filetype=verilog
+"au BufNewFile,BufRead *.sv set filetype=verilog
 
 let mapleader=","
 runtime macros/matchit.vim
@@ -205,6 +205,7 @@ if g:use_ale
 
     let g:ale_linters = {
         \ 'python': ['flake8'],
+        \ 'systemverilog': ['verilator'],
     \}
     let g:ale_python_flake8_options = '--ignore E501,W391'
 else
