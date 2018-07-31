@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="mine"
 plugins=(ubuntu git vim)
-fpath=($ZSH_CUSTOM/completion $fpath)
+# fpath=($ZSH_CUSTOM/completion $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -37,6 +37,12 @@ bindkey "^[[3~" delete-char
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[3;5~" delete-word
+
+# zsh on WSL
+bindkey "^[[C" forward-word
+bindkey "^[OC" forward-char
+bindkey "^[[D" backward-word
+bindkey "^[OD" backward-char
 
 function pygrep () {
         if [ "$#" -lt "1" ]
