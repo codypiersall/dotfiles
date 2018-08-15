@@ -51,6 +51,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.html setlocal shiftwidth=2 tabstop=2 textwidth=0
 au BufRead,BufNewFile *.h set filetype=c
 au BufRead,BufNewFile *.v,*.sv setlocal shiftwidth=2 tabstop=2
+au BufRead,BufNewFile *.sv set filetype=verilog
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 
@@ -206,6 +207,7 @@ if g:use_ale
     let g:ale_linters = {
         \ 'python': ['flake8'],
         \ 'systemverilog': ['verilator'],
+        \ 'verilog': ['verilator'],
     \}
     let g:ale_python_flake8_options = '--ignore E501,W391'
 else
@@ -258,3 +260,14 @@ function PyFile()
 endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
+
+" File explorer options
+let g:netrw_liststyle = 3
+let g:netrw_banner = 0
+let g:netrw_browse_split = 4
+
+" Make :bn and :bp skip quickfix windows
+augroup qf
+    autocmd!
+    autocmd FileType qf set nobuflisted
+augroup END
