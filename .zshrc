@@ -114,3 +114,5 @@ alias httpserver='python -m http.server'
 
 # Any changes that shouldn't be tracked can go in the local zshrc.
 source "$HOME/.zshrc_local"
+
+alias glogtime="git log --graph --pretty='%C(yellow)%h %C(green)%cd %C(white)%s%C(reset)' --date=local"
