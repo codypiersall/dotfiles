@@ -18,3 +18,5 @@ if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
 fi
 
 set -o vi
+
+source "$HOME/.bashrc_local"
