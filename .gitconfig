@@ -24,7 +24,7 @@
 [include]
     path = .gitconfig_local
 [user]
-	email = cody@arrc.ou.edu
+	email = cody.piersall@gmail.com
 	name = Cody Piersall
 [credential "https://gitlab.com"]
     username = codypiersall
