@@ -271,3 +271,6 @@ augroup qf
     autocmd!
     autocmd FileType qf set nobuflisted
 augroup END
+
+" search for current text
+vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
