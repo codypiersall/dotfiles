@@ -247,9 +247,14 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " YouCompleteMe options
 " autoload .ycm_extra_conf file (do not ask for confirmation)
 let g:ycm_confirm_extra_conf = 0
-" the global
 let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
-let g:ycm_python_binary_path = 'python'
+
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
 
 highlight link YcmErrorSection Error
 highlight link ALEError Error
