@@ -24,6 +24,7 @@ Plugin 'vim-scripts/SWIG-syntax'
 Plugin 'vim-scripts/mako.vim'
 Plugin 'embear/vim-localvimrc'
 "Plugin 'ervandew/supertab'
+Plugin 'metakirby5/codi.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'isRuslan/vim-es6'
@@ -271,6 +272,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 
+au FileType yaml setlocal shiftwidth=2
 " Make :bn and :bp skip quickfix windows
 augroup qf
     autocmd!
@@ -279,3 +281,4 @@ augroup END
 
 " search for current text
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
+let g:codi#width = 72

@@ -20,3 +20,6 @@ fi
 set -o vi
 
 source "$HOME/.bashrc_local"
+
+# added by travis gem
+[ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh

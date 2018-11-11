@@ -4,7 +4,7 @@ export ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="mine"
 plugins=(ubuntu git vim)
 # fpath=($ZSH_CUSTOM/completion $fpath)
-
+ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
 # python virtualenv stuff
@@ -116,3 +116,23 @@ alias httpserver='python -m http.server'
 source "$HOME/.zshrc_local"
 
 alias glogtime="git log --graph --pretty='%C(yellow)%h %C(green)%cd %C(white)%s%C(reset)' --date=local"
+
+# added by travis gem
+[ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
+
+# Codi
+# Usage: codi [filetype] [filename]
+function codi() {
+    local syntax="python"
+    if [ $# -ge 1 ]; then
+        local syntax="${1}"
+        shift
+    fi
+    vim -c \
+        "let g:startify_disable_at_vimenter = 1 |\
+        set bt=nofile ls=0 noru nonu nornu |\
+        hi ColorColumn ctermbg=NONE |\
+        hi VertSplit ctermbg=NONE |\
+        hi NonText ctermfg=0 |\
+        Codi $syntax" "$@"
+}
