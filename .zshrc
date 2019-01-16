@@ -136,3 +136,4 @@ function codi() {
         hi NonText ctermfg=0 |\
         Codi $syntax" "$@"
 }
+alias psaf='ps -AF'
