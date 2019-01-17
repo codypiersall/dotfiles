@@ -52,7 +52,7 @@ au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.html setlocal shiftwidth=2 tabstop=2 textwidth=0
 au BufRead,BufNewFile *.h set filetype=c
 au BufRead,BufNewFile *.v,*.sv setlocal shiftwidth=2 tabstop=2
-au BufRead,BufNewFile *.sv set filetype=verilog
+au BufRead,BufNewFile *.sv,*.vh set filetype=systemverilog
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
 

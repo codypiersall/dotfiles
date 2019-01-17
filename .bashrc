@@ -12,6 +12,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
+export PYTHONSTARTUP=~/.pythonrc
 mkdir -p $WORKON_HOME
 
 alias gb='git branch'

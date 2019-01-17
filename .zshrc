@@ -12,6 +12,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
+export PYTHONSTARTUP=~/.pythonrc
 mkdir -p $WORKON_HOME
 
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
@@ -54,7 +55,11 @@ function pygrep () {
 
 # do math calculations on arguments
 function zc_() {
-    print "$argv = $(echo $argv | bc -l)"
+    print "$argv = $(($*))"
+    setopt glob
+}
+
+function zcc() {
     setopt glob
 }
 
@@ -137,3 +142,5 @@ function codi() {
         Codi $syntax" "$@"
 }
 alias psaf='ps -AF'
+alias grep="grep '--exclude=*'{~,.o,.so,.ko}"
+alias tmuxp='~/.local/bin/tmuxp'
