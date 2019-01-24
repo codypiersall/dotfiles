@@ -53,6 +53,14 @@ function pygrep () {
         grep -n $* --exclude-dir=.git --include='*.py' --include='*.ipynb' --exclude-dir='.ipynb_checkpoints' -r .
 }
 
+function cgrep () {
+        if [ "$#" -lt "1" ]
+        then
+                return
+        fi
+        grep -n $* --exclude-dir=.git --include='*.[ch]' --exclude-dir='.ipynb_checkpoints' -r .
+}
+
 # do math calculations on arguments
 function zc_() {
     print "$argv = $(($*))"
