@@ -282,3 +282,5 @@ augroup END
 " search for current text
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 let g:codi#width = 72
+
+set encoding=utf-8
