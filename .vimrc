@@ -18,6 +18,7 @@ else
     Plugin 'scrooloose/syntastic'
 endif
 
+Plugin 'tweekmonster/wstrip.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'vim-scripts/Conque-GDB'
 Plugin 'vim-scripts/SWIG-syntax'
@@ -45,7 +46,7 @@ Plugin 'justinmk/vim-syntax-extra'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Treat markdown files right.
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -257,6 +258,8 @@ let g:ycm_extra_conf_vim_data = [
   \  'g:ycm_python_sys_path'
   \]
 
+
+let g:wstrip_auto = 1
 highlight link YcmErrorSection Error
 highlight link ALEError Error
 
