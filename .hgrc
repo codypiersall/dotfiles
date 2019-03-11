@@ -1,6 +1,6 @@
 [ui]
 # Name data to appear in commits
-username = Cody Piersall <codypi@ou.edu>
+username = Cody Piersall <cody.piersall@gmail.com>
 ssh = ssh -C
 
 [alias]
