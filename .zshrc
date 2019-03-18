@@ -150,5 +150,5 @@ function codi() {
         Codi $syntax" "$@"
 }
 alias psaf='ps -AF'
-alias grep="grep '--exclude=*'{~,.o,.so,.ko}"
+alias grep="grep '--exclude=*'{~,.o,.so,.ko} --color=auto '--exclude-dir='{.git,.hg,.svn,.ipynb_checkpoints}"
 alias tmuxp='~/.local/bin/tmuxp'
