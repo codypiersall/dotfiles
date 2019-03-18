@@ -40,6 +40,8 @@ Plugin 'jamis/fuzzy_file_finder'
 Plugin 'rust-lang/rust.vim'
 Plugin 'lambdalisue/vim-cython-syntax'
 Plugin 'justinmk/vim-syntax-extra'
+Plugin 'majutsushi/tagbar'
+
 "Plugin 'rhysd/committia.vim'
 
 "Plugin 'klen/python-mode'
@@ -285,5 +287,7 @@ augroup END
 " search for current text
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 let g:codi#width = 72
+
+let g:rustfmt_autosave = 1
 
 set encoding=utf-8
