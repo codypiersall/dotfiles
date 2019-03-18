@@ -41,7 +41,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'lambdalisue/vim-cython-syntax'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'majutsushi/tagbar'
-
+Plugin 'Matt-Deacalion/vim-systemd-syntax'
 "Plugin 'rhysd/committia.vim'
 
 "Plugin 'klen/python-mode'
