@@ -6,6 +6,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # for the tool pdftotext, useful in git diffs
 sudo apt-get install poppler-utils
+sudo apt-get install zsh
+sudo apt-get install vim
+sudo apt-get install xclip
 
 python3 ./create_symlinks.py -f
 touch ~/.zshrc_local
