@@ -41,6 +41,13 @@ alias .........='cd ../../../../../../../..'
 
 alias j=jobs
 alias f=fg
+alias ls='ls --color=auto'
+alias l='ls -alh'
+alias ll='ls -lh'
+
+alias agi='sudo apt install'
+alias agr='sudo apt remove'
+alias agu='sudo apt update'
 
 if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
     source /usr/local/bin/virtualenvwrapper.sh
@@ -52,3 +59,11 @@ source "$HOME/.bashrc_local"
 
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
+
+cgrep () {
+        if [ "$#" -lt "1" ]
+        then
+                return
+        fi
+        grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} -n $* --exclude-dir=.git --include='*.[ch]' --exclude-dir='.ipynb_checkpoints' -r .
+}
