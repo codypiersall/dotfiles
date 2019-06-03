@@ -1,7 +1,7 @@
 # virtual environment
 export WORKON_HOME=$HOME/.venvs
 
-PS1='[\e[0;31m\D{%I:%M%p}\e[0m] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\033[01;34m\]@\033[01;36m\]\h\[\033[00m\] \[\033[02;33m\]\w \[\033[00m\]\$ '
+PS1='[\e[31m\D{%I:%M%p}\e[0m] \[\e[92m\u\e[94m@\e[96m\h \e[33m\w \e[0m\$ '
 
 export EDITOR=vim
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -62,4 +62,7 @@ cgrep () {
                 return
         fi
         grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} -n $* --exclude-dir=.git --include='*.[ch]' --exclude-dir='.ipynb_checkpoints' -r .
+}
+yd() {
+    diff -u $* | ydiff -s
 }
