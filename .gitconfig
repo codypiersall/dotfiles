@@ -8,7 +8,7 @@
 	vimdiff = difftool
 [core]
 	editor = vim
-    autocrlf = input
+	autocrlf = input
 [diff]
 	tool = vimdiff
 [difftool "meld"]
@@ -22,17 +22,17 @@
 [http]
 	sslverify = false
 [include]
-    path = .gitconfig_local
+	path = .gitconfig_local
 [user]
 	email = cody.piersall@gmail.com
 	name = Cody Piersall
 [credential "https://gitlab.com"]
-    username = codypiersall
+	username = codypiersall
 [credential "https://github.com"]
-    username = codypiersall
+	username = codypiersall
 [credential "https://git.arrc.ou.edu"]
-    username = pier3595
+	username = pier3595
 [difftool]
 	prompt = false
 [diff "astextplain"]
-    textconv = astextplain
+	textconv = astextplain
