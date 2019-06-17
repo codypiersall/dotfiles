@@ -1,7 +1,7 @@
 # virtual environment
 export WORKON_HOME=$HOME/.venvs
 
-PS1='[\e[31m\D{%I:%M%p}\e[0m] \[\e[92m\u\e[94m@\e[96m\h \e[33m\w \e[0m\$ '
+PS1='[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]] \[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e[33m\]\w \[\e[0m\]\$ '
 
 export EDITOR=vim
 export VIRTUAL_ENV_DISABLE_PROMPT=1
