@@ -53,6 +53,10 @@ set -o vi
 
 source "$HOME/.bashrc_local"
 
+bind 'set show-all-if-ambiguous on'
+bind 'set completion-ignore-case on'
+bind 'set colored-stats on'
+
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
 
