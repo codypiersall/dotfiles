@@ -70,3 +70,19 @@ cgrep () {
 yd() {
     diff -u $* | ydiff -s
 }
+
+# https://superuser.com/questions/561451/is-there-a-shell-which-supports-fuzzy-completion-as-in-sublime-text
+function _fuzzypath() {
+    if [ -z $2 ] 
+    then
+        COMPREPLY=( $(ls) )
+    else
+        var="$2"
+        var="${var/#\~/$HOME}"
+        DIRPATH=$(echo "$var" | sed 's|[^/]*$||')
+        BASENAME=$(echo "$var" | sed 's|.*/||')
+        FILTER=$(echo "$BASENAME" | sed 's|.|\0.*|g')
+        COMPREPLY=( $(ls $DIRPATH | grep -i "$FILTER" | sed "s|^|$DIRPATH|g") )
+    fi
+}
+#complete -o nospace -o filenames -F _fuzzypath cd ls cat
