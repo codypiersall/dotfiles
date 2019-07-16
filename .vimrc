@@ -277,7 +277,7 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 let g:netrw_browse_split = 4
 
-au FileType yaml setlocal shiftwidth=2
+au FileType yaml setlocal shiftwidth=2 foldmethod=indent
 " Make :bn and :bp skip quickfix windows
 augroup qf
     autocmd!
