@@ -15,8 +15,8 @@ export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
 mkdir -p $WORKON_HOME
 
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+if [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 autoload -U zmv
