@@ -73,7 +73,7 @@ yd() {
 
 # https://superuser.com/questions/561451/is-there-a-shell-which-supports-fuzzy-completion-as-in-sublime-text
 function _fuzzypath() {
-    if [ -z $2 ] 
+    if [ -z $2 ]
     then
         COMPREPLY=( $(ls) )
     else
@@ -86,3 +86,11 @@ function _fuzzypath() {
     fi
 }
 #complete -o nospace -o filenames -F _fuzzypath cd ls cat
+
+# evaluate a math expression
+function _zc() {
+    echo $(($*))
+    set +f
+}
+
+alias zc='set -f; _zc'
