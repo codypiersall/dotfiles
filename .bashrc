@@ -77,15 +77,28 @@ function _fuzzypath() {
     then
         COMPREPLY=( $(ls) )
     else
-        var="$2"
-        var="${var/#\~/$HOME}"
-        DIRPATH=$(echo "$var" | sed 's|[^/]*$||')
-        BASENAME=$(echo "$var" | sed 's|.*/||')
-        FILTER=$(echo "$BASENAME" | sed 's|.|\0.*|g')
-        COMPREPLY=( $(ls $DIRPATH | grep -i "$FILTER" | sed "s|^|$DIRPATH|g") )
+        arg="$2"
+        # split the directory out
+        DIRPATH=$(echo "$arg" | sed 's|[^/]*$||')
+        BASENAME=$(echo "$arg" | sed 's|.*/||')
+        # FILTER=$(echo "$BASENAME" | sed 's|.|\0.*|g')
+        # use eval so that "~" gets expanded
+        # first try to match beginning of lines:
+        COMPREPLY=( $(eval ls $DIRPATH | grep -i "^$BASENAME") )
+        # if COMPREPLY is empty, match any part of the string
+        if (( ! ${#COMPREPLY[@]} )); then
+            COMPREPLY=( $(eval ls $DIRPATH | grep -i "$BASENAME" | sed "s|^|$DIRPATH|g") )
+        fi
+        if [ ! -z "$DEBUG_COMPLETION" ]; then
+            echo >&2
+            echo >&2 "DIRPATH $DIRPATH"
+            echo >&2 "BASENAME $BASENAME"
+            echo >&2 "COMPREPLY $COMPREPLY"
+            echo >&2
+        fi
     fi
 }
-#complete -o nospace -o filenames -F _fuzzypath cd ls cat
+# complete -o nospace -o filenames -F _fuzzypath cd ls cat cp mv
 
 # evaluate a math expression
 function _zc() {
