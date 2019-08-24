@@ -153,3 +153,4 @@ alias psaf='ps -AF'
 alias grep="grep '--exclude=*'{~,.o,.so,.ko} --color=auto '--exclude-dir='{.git,.hg,.svn,.ipynb_checkpoints}"
 alias tmuxp='~/.local/bin/tmuxp'
 alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
+alias xopen='xdg-open'

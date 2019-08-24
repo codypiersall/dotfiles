@@ -107,3 +107,4 @@ function _zc() {
 }
 
 alias zc='set -f; _zc'
+alias xopen='xdg-open'
