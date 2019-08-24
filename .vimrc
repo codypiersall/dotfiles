@@ -32,6 +32,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'scrooloose/nerdtree'
 " support for Sphinx style rst files.
 Plugin 'Rykka/riv.vim'
+" Plugin 'racer-rust/vim-racer'
 
 Plugin 'eparreno/vim-l9'
 Plugin 'vim-scripts/FuzzyFinder'
