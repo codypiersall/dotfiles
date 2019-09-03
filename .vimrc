@@ -43,12 +43,14 @@ Plugin 'lambdalisue/vim-cython-syntax'
 Plugin 'justinmk/vim-syntax-extra'
 Plugin 'majutsushi/tagbar'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
-"Plugin 'rhysd/committia.vim'
+Plugin 'kergoth/vim-bitbake'
+Plugin 'rhysd/committia.vim'
 
 "Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" We don't need this now that we use wstrip.vim
 " autocmd BufWritePre * :%s/\s\+$//e
 
 " Treat markdown files right.
@@ -299,3 +301,7 @@ autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . 
 " protect against modeline vunerability
 set nomodeline
 set modelines=0
+
+" disable wstrip on git commit messages: it causes syntax highlighting not to
+" work in git commit -v mode.  For now we're just using committia though.
+" au BufRead,BufNewFile COMMIT_EDITMSG let g:wstrip_auto = 0
