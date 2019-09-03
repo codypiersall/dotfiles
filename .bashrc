@@ -98,7 +98,7 @@ function _fuzzypath() {
         fi
     fi
 }
-# complete -o nospace -o filenames -F _fuzzypath cd ls cat cp mv
+# complete -o nospace -o filenames -F _fuzzypath cd ls cat cp mv bat
 
 # evaluate a math expression
 function _zc() {
