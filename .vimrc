@@ -45,6 +45,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
 Plugin 'kergoth/vim-bitbake'
 Plugin 'rhysd/committia.vim'
+Plugin 'lervag/vimtex'
 
 "Plugin 'klen/python-mode'
 call vundle#end()            " required
