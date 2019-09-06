@@ -218,6 +218,7 @@ if g:use_ale
         \ 'verilog': ['verilator'],
     \}
     let g:ale_python_flake8_options = '--ignore E501,W391'
+    let g:ale_tex_chktex_options = " -n8 "
 else
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
