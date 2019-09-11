@@ -47,8 +47,20 @@ Plugin 'kergoth/vim-bitbake'
 Plugin 'rhysd/committia.vim'
 Plugin 'lervag/vimtex'
 
+" snippet support
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 "Plugin 'klen/python-mode'
 call vundle#end()            " required
+
+" Trigger config for snippets
+let g:UltiSnipsExpandTrigger="<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-h>"
+let g:UltiSnipsJumpBackwardTrigger="<c-l>"
+
+let g:ycm_key_list_previous_completion = ["<Down>"]
+
 filetype plugin indent on    " required
 
 " We don't need this now that we use wstrip.vim
@@ -300,7 +312,7 @@ set encoding=utf-8
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-autocmd BufRead *.tex :setlocal sw=2 tw=0
+autocmd BufNewFile,BufRead *.tex :setlocal sw=2 tw=0 | let g:UltiSnipsExpandTrigger = "<S-Tab>"
 " protect against modeline vunerability
 set nomodeline
 set modelines=0
