@@ -26,6 +26,7 @@ export _current_dir="%F{blue}%~%f"
 # For colorized gcc output
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export EDITOR=vim
+export BROWSER=firefox
 
 #bindkey -M viins 'jk' vi-cmd-mode
 bindkey '\e[A' history-beginning-search-backward
