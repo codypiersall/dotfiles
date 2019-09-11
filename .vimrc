@@ -312,7 +312,7 @@ set encoding=utf-8
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWritePost *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" | redraw!
 
-autocmd BufNewFile,BufRead *.tex :setlocal sw=2 tw=0 | let g:UltiSnipsExpandTrigger = "<S-Tab>"
+autocmd BufNewFile,BufRead, *.tex :setlocal sw=2 tw=0
 " protect against modeline vunerability
 set nomodeline
 set modelines=0
