@@ -156,3 +156,4 @@ alias tmuxp='~/.local/bin/tmuxp'
 alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
 alias xopen='xdg-open'
 pathadd "$HOME/.local/bin"
+pathadd "$HOME/.cargo/bin"
