@@ -157,3 +157,4 @@ alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --e
 alias xopen='xdg-open'
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
+compinit
