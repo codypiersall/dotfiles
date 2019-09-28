@@ -12,3 +12,5 @@ sudo apt-get install xclip
 
 python3 ./create_symlinks.py -f
 touch ~/.zshrc_local
+mkdir -p ~/.goto
+
