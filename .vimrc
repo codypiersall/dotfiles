@@ -56,8 +56,8 @@ call vundle#end()            " required
 
 " Trigger config for snippets
 let g:UltiSnipsExpandTrigger="<S-Tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-h>"
-let g:UltiSnipsJumpBackwardTrigger="<c-l>"
+let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<>"
 
 let g:ycm_key_list_previous_completion = ["<Down>"]
 
