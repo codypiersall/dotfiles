@@ -3,7 +3,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="mine"
 plugins=(ubuntu git)
-# fpath=($ZSH_CUSTOM/completion $fpath)
+fpath=($ZSH_CUSTOM/completion $fpath)
 ZSH_DISABLE_COMPFIX=true
 source $ZSH/oh-my-zsh.sh
 
@@ -93,10 +93,10 @@ _gotoerrmsg() {
 
 function goto() {
     if [ $# -lt 1 ]; then
-        print -rl -- $(cd  ~/goto; ls *[^~])
+        print -rl -- $(cd  ~/.goto; ls *[^~])
         return
     fi
-    cd "$(cat ~/goto/$1)"
+    cd "$(cat ~/.goto/$1)"
 }
 
 function setgoto() {
@@ -104,7 +104,7 @@ function setgoto() {
         _gotoerrmsg
         return
     fi
-    pwd > ~/goto/$1
+    pwd > ~/.goto/$1
 }
 
 function rmgoto() {
@@ -112,7 +112,7 @@ function rmgoto() {
         _gotoerrmsg
         return
     fi
-    rm ~/goto/$1
+    rm ~/.goto/$1
 }
 
 alias glogc='glog --color=always'
