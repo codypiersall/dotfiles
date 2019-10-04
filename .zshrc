@@ -158,3 +158,5 @@ alias xopen='xdg-open'
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
 compinit
+
+alias cclip='xclip -selection clipboard'
