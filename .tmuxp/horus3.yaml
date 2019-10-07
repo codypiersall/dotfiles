@@ -6,10 +6,10 @@ windows:
     automatic-rename: 'off'
   panes:
   - focus: 'true'
-    shell_command: "ssh horus2"
+    shell_command: "ssh horus3"
   - focus: 'false'
-    shell_command: "ssh horus2"
+    shell_command: "ssh horus3"
   - focus: 'false'
-    shell_command: "ssh horus2"
+    shell_command: "ssh horus3"
   start_directory: ''
   window_name: tmuxp
