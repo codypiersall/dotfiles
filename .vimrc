@@ -183,6 +183,8 @@ nnoremap <Leader>t :FufTag<CR>
 "nnoremap <Leader>b :FufBuffer<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
 
+nnoremap <Leader>y "+yy
+
 
 " These are the generated ctags for the Linux source.
 set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
