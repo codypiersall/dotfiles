@@ -74,7 +74,7 @@ function zcc() {
 
 function pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
-        PATH="${PATH:+"$PATH:"}$1"
+        PATH="$1:${PATH:+"$PATH:"}"
     fi
 }
 
@@ -152,7 +152,6 @@ function codi() {
 }
 alias psaf='ps -AF'
 alias grep="grep '--exclude=*'{~,.o,.so,.ko} --color=auto '--exclude-dir='{.git,.hg,.svn,.ipynb_checkpoints}"
-alias tmuxp='~/.local/bin/tmuxp'
 alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
 alias xopen='xdg-open'
 pathadd "$HOME/.local/bin"
