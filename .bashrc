@@ -5,7 +5,7 @@ PS1='\n[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]] \[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e
 
 export EDITOR=vim
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
@@ -45,8 +45,14 @@ alias agi='sudo apt install'
 alias agr='sudo apt remove'
 alias agu='sudo apt update'
 
-if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+if [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
+    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
+    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
+    source "$HOME/.local/bin/virtualenvwrapper_lazy.sh"
+elif [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
 set -o vi

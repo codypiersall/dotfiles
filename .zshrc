@@ -9,13 +9,19 @@ source $ZSH/oh-my-zsh.sh
 
 # python virtualenv stuff
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
 mkdir -p $WORKON_HOME
 
-if [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+if [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
+    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
+    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
+    source "$HOME/.local/bin/virtualenvwrapper_lazy.sh"
+elif [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
+    export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 
