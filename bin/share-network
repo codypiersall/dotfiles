@@ -1,0 +1,23 @@
+#!/bin/bash
+
+function usage() {
+    echo >&2 USAGE: $0 EXTERNAL_IFACE INTERNAL_IFACE
+    exit
+}
+
+if [ "$#" -ne 3 ]; then
+    usage
+fi
+
+ext_iface="$1"
+int_iface="$2"
+
+# Fixes DNS for some reason... something to do with systemd-resolved sucking.
+# https://unix.stackexchange.com/questions/466105/iptables-masquerade-breaks-dns-lookups
+# https://github.com/kubernetes/kubernetes/issues/66067#issuecomment-467883236
+iptables -t nat -I POSTROUTING -d 127.0.0.53 -o lo -j SNAT --to-source 127.0.0.1
+
+# the actual sharing part here
+iptables -t nat -A POSTROUTING -j MASQUERADE &&
+iptables -A FORWARD -i enx70886b832fbf -o enp39s0 -m state --state RELATED,ESTABLISHED -j ACCEPT &&
+iptables -A FORWARD -i enp39s0 -o enx70886b832fbf -j ACCEPT
