@@ -108,5 +108,6 @@ function _zc() {
     set +f
 }
 
+source /etc/profile.d/bash_completion.sh
 alias zc='set -f; _zc'
 alias xopen='xdg-open'
