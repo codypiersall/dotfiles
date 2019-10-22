@@ -102,6 +102,12 @@ function goto() {
         print -rl -- $(cd  ~/.goto; ls *[^~])
         return
     fi
+    if [ "$1" = "-v" ]; then 
+        for f in $(ls ~/.goto/*); do
+            printf '%s\t%s\n' "$(basename $f)" "$(cat $f)"
+        done | column -t -s $'\t' | sed s"|$HOME|~|"
+        return
+    fi
     cd "$(cat ~/.goto/$1)"
 }
 
