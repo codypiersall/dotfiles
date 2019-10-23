@@ -3,3 +3,10 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" Can't use <Leader> in .vrapperrc, use <space>
+nnoremap <space>w :w<CR>
+nnoremap <space>n :bn<CR>
+nnoremap <space>p :bp<CR>
+nnoremap <space>d :Bd<CR>
+nnoremap <space>x :x<CR>
+nnoremap <space>q :q<CR>
