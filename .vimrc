@@ -8,6 +8,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
 let mapleader="s"
+
+let g:black_linelength = 80
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -18,34 +20,34 @@ else
     Plugin 'scrooloose/syntastic'
 endif
 
-Plugin 'tweekmonster/wstrip.vim'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'vim-scripts/Conque-GDB'
-Plugin 'vim-scripts/SWIG-syntax'
-Plugin 'vim-scripts/mako.vim'
 Plugin 'embear/vim-localvimrc'
-"Plugin 'ervandew/supertab'
-Plugin 'metakirby5/codi.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'eparreno/vim-l9'
+" Plugin 'ervandew/supertab'
 Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'isRuslan/vim-es6'
-Plugin 'scrooloose/nerdtree'
-" support for Sphinx style rst files.
-Plugin 'Rykka/riv.vim'
-" Plugin 'racer-rust/vim-racer'
-
-Plugin 'eparreno/vim-l9'
-Plugin 'vim-scripts/FuzzyFinder'
-Plugin 'jamis/fuzzyfinder_textmate'
 Plugin 'jamis/fuzzy_file_finder'
-Plugin 'rust-lang/rust.vim'
-Plugin 'lambdalisue/vim-cython-syntax'
+Plugin 'jamis/fuzzyfinder_textmate'
 Plugin 'justinmk/vim-syntax-extra'
+Plugin 'kergoth/vim-bitbake'
+Plugin 'lambdalisue/vim-cython-syntax'
+Plugin 'lervag/vimtex'
 Plugin 'majutsushi/tagbar'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
-Plugin 'kergoth/vim-bitbake'
+" Plugin 'metakirby5/codi.vim'
+Plugin 'psf/black'
+" Plugin 'racer-rust/vim-racer'
 Plugin 'rhysd/committia.vim'
-Plugin 'lervag/vimtex'
+Plugin 'rust-lang/rust.vim'
+" support for Sphinx style rst files.
+Plugin 'Rykka/riv.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tweekmonster/wstrip.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/Conque-GDB'
+Plugin 'vim-scripts/FuzzyFinder'
+Plugin 'vim-scripts/mako.vim'
+Plugin 'vim-scripts/SWIG-syntax'
 
 " snippet support
 Plugin 'SirVer/ultisnips'
@@ -231,8 +233,13 @@ if g:use_ale
         \ 'systemverilog': ['verilator'],
         \ 'verilog': ['verilator'],
     \}
-    let g:ale_python_flake8_options = '--ignore E501,W391'
+    " E501: line too long
+    " W503: line break before binary operator 
+    let g:ale_python_flake8_options = '--ignore E501,W503'
     let g:ale_tex_chktex_options = " -n8 "
+    " https://github.com/dense-analysis/ale/issues/1470
+    " Remove this line when Vim 8.1 is used.
+    let g:ale_echo_cursor = 0
 else
     set statusline+=%#warningmsg#
     set statusline+=%{SyntasticStatuslineFlag()}
@@ -290,6 +297,8 @@ function PyFile()
 endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
+
+au BufWritePre *.py execute ':Black'
 
 " File explorer options
 let g:netrw_liststyle = 3
