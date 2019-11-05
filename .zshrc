@@ -129,6 +129,7 @@ function rmgoto() {
 
 alias glogc='glog --color=always'
 alias glogh='glog --color=always | head'
+alias gstu='gst -uno'
 alias lsd='ls -ald *'
 alias f=fg
 alias j=jobs
