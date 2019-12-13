@@ -1,0 +1,36 @@
+#!/bin/bash
+
+function usage() {
+    echo >&2 "Usage: $1 TAR_FILE"
+    echo >&2 "Un-tars a file into a new directory with the same name as the tar."
+}
+
+if [ $# -ne 1 ]; then
+    echo >&2 "Error: $0 requires 1, and only 1, argument"
+    usage
+    exit 1
+fi
+
+fname="$1"
+
+if [ ! -f $fname ]; then
+    echo >&2 "cannot access $fname: No such file or directory"
+    exit $?
+fi
+
+flags='-xvf'
+if file $fname | grep gzip > /dev/null; then
+    flags="-z ${flags}"
+fi
+
+dname=$(dirname "$fname")
+bname=$(basename "$fname")
+
+# strip known extensions
+for ext in .tar .tar.gz .tgz; do
+    bname="${bname%$ext}"
+done
+dir="${dname}/${bname}"
+
+tar $flags $fname -C $dir
+
