@@ -26,18 +26,17 @@ def exclude(fname):
 def main():
     for dir in DIRS:
         for file in os.listdir(dir):
-            source = os.path.join(dir, file)
-            whatsleft = source[len(THIS_DIR) + 1:]
-            symlink = os.path.join(HOME, whatsleft)
+            target = os.path.join(dir, file)
+            link_name = os.path.join(HOME, file)
             force = '-f' in sys.argv
-            if not exclude(source):
-                if not os.path.exists(symlink) or force:
-                    if os.path.exists(symlink):
-                        os.remove(symlink)
-                    os.symlink(source, symlink)
-                    print('ln -s {} {}'.format(source, symlink))
+            if not exclude(target):
+                if (not os.path.exists(link_name)) or force:
+                    print('ln -s {} {}'.format(target, link_name))
+                    if os.path.islink(link_name) or os.path.exists(link_name):
+                        os.remove(link_name)
+                    os.symlink(target, link_name)
                 else:
-                    print('file {} already exists'.format(symlink))
+                    print('file {} already exists'.format(link_name))
 
 
 if __name__ == '__main__':
