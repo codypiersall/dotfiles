@@ -163,6 +163,7 @@ function codi() {
         hi NonText ctermfg=0 |\
         Codi $syntax" "$@"
 }
+
 alias psaf='ps -AF'
 alias grep="grep '--exclude=*'{~,.o,.so,.ko} --color=auto '--exclude-dir='{.git,.hg,.svn,.ipynb_checkpoints}"
 alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
@@ -172,3 +173,4 @@ pathadd "$HOME/.cargo/bin"
 compinit
 
 alias cclip='xclip -selection clipboard'
+alias weather='curl wttr.in'
