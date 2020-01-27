@@ -3,14 +3,7 @@ export WORKON_HOME=$HOME/.venvs
 
 PS1='\n[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]] \[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e[33m\]\w \[\e[0m\]\n\$ '
 
-export EDITOR=vim
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
-export WORKON_HOME=~/.envs
-export PROJECT_HOME=~/Dev
-export PYTHONSTARTUP=~/.pythonrc
-mkdir -p $WORKON_HOME
-
+# aliases that in zsh are provided by git plugin
 alias gb='git branch'
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
@@ -35,8 +28,6 @@ alias .......='cd ../../../../../..'
 alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 
-alias j=jobs
-alias f=fg
 alias ls='ls --color=auto'
 alias l='ls -alh'
 alias ll='ls -lh'
@@ -45,33 +36,9 @@ alias agi='sudo apt install'
 alias agr='sudo apt remove'
 alias agu='sudo apt update'
 
-if [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
-    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
-    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
-    source "$HOME/.local/bin/virtualenvwrapper_lazy.sh"
-elif [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
-    export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    source /usr/local/bin/virtualenvwrapper_lazy.sh
-fi
-
+source "$HOME/.common.sh"
 set -o vi
-
 source "$HOME/.bashrc_local"
-
-# added by travis gem
-[ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
-
-cgrep () {
-        if [ "$#" -lt "1" ]
-        then
-                return
-        fi
-        grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn} -n $* --exclude-dir=.git --include='*.[ch]' --exclude-dir='.ipynb_checkpoints' -r .
-}
-yd() {
-    diff -u $* | ydiff -s
-}
 
 # https://superuser.com/questions/561451/is-there-a-shell-which-supports-fuzzy-completion-as-in-sublime-text
 function _fuzzypath() {
@@ -110,4 +77,4 @@ function _zc() {
 
 source /etc/profile.d/bash_completion.sh
 alias zc='set -f; _zc'
-alias xopen='xdg-open'
+source /home/cody/.config/broot/launcher/bash/br
