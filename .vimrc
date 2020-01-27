@@ -15,7 +15,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 if g:use_ale
-    Plugin 'w0rp/ale'
+    Plugin 'dense-analysis/ale'
 else
     Plugin 'scrooloose/syntastic'
 endif
@@ -118,18 +118,20 @@ set autoindent      " Copy indent from current line when starting a new line
 set textwidth=79    " Maximum width of text that is being inserted. A longer
                     " line will be broken after white space to get this width.
 
-set formatoptions=c,q,r,t " This is a sequence of letters which describes how
+set formatoptions=c,l,n,q,r,t " This is a sequence of letters which describes how
                     " automatic formatting is to be done.
                     "
                     " letter    meaning when present in 'formatoptions'
                     " ------    ---------------------------------------
                     " c         Auto-wrap comments using textwidth, inserting
                     "           the current comment leader automatically.
+                    " l         long lines are not broken.
                     " q         Allow formatting of comments with "gq".
                     " r         Automatically insert the current comment leader
                     "           after hitting <Enter> in Insert mode.
                     " t         Auto-wrap text using textwidth (does not apply
                     "           to comments)
+                    " n         Wrap in numbered lists
 
 set whichwrap+=b,s,[,] " backspaces and cursor keys wrap too
 
