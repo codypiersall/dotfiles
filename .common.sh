@@ -83,5 +83,16 @@ function codi() {
         Codi $syntax" "$@"
 }
 
+function fix_pdf_screenshot() {
+    fname="$1"
+    if [ -z "$fname" ]; then
+        echo >&2 "no filename given"
+        return 1
+    fi
+    # trims image
+    convert "$fname" -fuzz '1%' -trim +repage "$fname"
+    # change white to transparent
+    convert "$fname" -fuzz 1% -transparent white "$fname"
+}
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
