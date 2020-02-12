@@ -10,6 +10,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 let mapleader="s"
 
 let g:black_linelength = 80
+let g:black_skip_string_normalization = 1
 call vundle#begin()
 
 " let Vundle manage Vundle, required
