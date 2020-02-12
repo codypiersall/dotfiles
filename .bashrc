@@ -1,6 +1,3 @@
-# virtual environment
-export WORKON_HOME=$HOME/.venvs
-
 PS1='\n[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]] \[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e[33m\]\w \[\e[0m\]\n\$ '
 
 # aliases that in zsh are provided by git plugin
