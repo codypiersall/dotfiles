@@ -96,3 +96,18 @@ function fix_pdf_screenshot() {
 }
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
+
+function initgit() {
+    git init
+    for x in \
+        '# C files' \
+        .o .so .a .dll .lib \
+        '' \
+        '# Vim files' \
+        '*.swp' '*~'; do
+        echo "$x" >> .gitignore
+    done
+    git add .gitignore
+    git commit -m 'Initial commit.'
+
+}
