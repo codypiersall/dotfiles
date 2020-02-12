@@ -32,5 +32,6 @@ for ext in .tar .tar.gz .tgz; do
 done
 dir="${dname}/${bname}"
 
-tar $flags $fname -C $dir
+echo tar $flags $fname -C $dir
+mkdir $dir && tar $flags $fname -C $dir
 
