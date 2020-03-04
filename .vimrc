@@ -35,6 +35,9 @@ Plugin 'lambdalisue/vim-cython-syntax'
 Plugin 'lervag/vimtex'
 Plugin 'majutsushi/tagbar'
 Plugin 'Matt-Deacalion/vim-systemd-syntax'
+" next two are markdown plugins
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 " Plugin 'metakirby5/codi.vim'
 Plugin 'psf/black'
 " Plugin 'racer-rust/vim-racer'
@@ -62,7 +65,7 @@ let g:UltiSnipsExpandTrigger="<S-Tab>"
 let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<>"
 
-let g:ycm_key_list_previous_completion = ["<Down>"]
+"let g:ycm_key_list_previous_completion = ["<Up>"]
 
 filetype plugin indent on    " required
 
