@@ -2,8 +2,6 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 let g:use_ale = 1
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
@@ -11,54 +9,52 @@ let mapleader="s"
 
 let g:black_linelength = 80
 let g:black_skip_string_normalization = 1
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin()
 if g:use_ale
-    Plugin 'dense-analysis/ale'
+    Plug 'dense-analysis/ale'
 else
-    Plugin 'scrooloose/syntastic'
+    Plug 'scrooloose/syntastic'
 endif
 
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'embear/vim-localvimrc'
-Plugin 'eparreno/vim-l9'
-" Plugin 'ervandew/supertab'
-Plugin 'hynek/vim-python-pep8-indent'
-Plugin 'isRuslan/vim-es6'
-Plugin 'jamis/fuzzy_file_finder'
-Plugin 'jamis/fuzzyfinder_textmate'
-Plugin 'justinmk/vim-syntax-extra'
-Plugin 'kergoth/vim-bitbake'
-Plugin 'lambdalisue/vim-cython-syntax'
-Plugin 'lervag/vimtex'
-Plugin 'majutsushi/tagbar'
-Plugin 'Matt-Deacalion/vim-systemd-syntax'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'embear/vim-localvimrc'
+Plug 'eparreno/vim-l9'
+" Plug 'ervandew/supertab'
+Plug 'hynek/vim-python-pep8-indent'
+Plug 'isRuslan/vim-es6'
+Plug 'jamis/fuzzy_file_finder'
+Plug 'jamis/fuzzyfinder_textmate'
+Plug 'justinmk/vim-syntax-extra'
+Plug 'kergoth/vim-bitbake'
+Plug 'lambdalisue/vim-cython-syntax'
+Plug 'lervag/vimtex'
+Plug 'majutsushi/tagbar'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
 " next two are markdown plugins
-Plugin 'godlygeek/tabular'
-Plugin 'plasticboy/vim-markdown'
-" Plugin 'metakirby5/codi.vim'
-Plugin 'psf/black'
-" Plugin 'racer-rust/vim-racer'
-Plugin 'rhysd/committia.vim'
-Plugin 'rust-lang/rust.vim'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Plug 'metakirby5/codi.vim'
+Plug 'psf/black'
+" Plug 'racer-rust/vim-racer'
+Plug 'rhysd/committia.vim'
+Plug 'rust-lang/rust.vim'
 " support for Sphinx style rst files.
-Plugin 'Rykka/riv.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tweekmonster/wstrip.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/Conque-GDB'
-Plugin 'vim-scripts/FuzzyFinder'
-Plugin 'vim-scripts/mako.vim'
-Plugin 'vim-scripts/SWIG-syntax'
+Plug 'Rykka/riv.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tweekmonster/wstrip.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'vim-scripts/Conque-GDB'
+Plug 'vim-scripts/FuzzyFinder'
+Plug 'vim-scripts/mako.vim'
+Plug 'vim-scripts/SWIG-syntax'
+Plug 'junegunn/vim-easy-align'
 
 " snippet support
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
-"Plugin 'klen/python-mode'
-call vundle#end()            " required
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+"Plug 'klen/python-mode'
+call plug#end()
 
 " Trigger config for snippets
 let g:UltiSnipsExpandTrigger="<S-Tab>"
@@ -333,6 +329,12 @@ autocmd BufNewFile,BufRead, *.tex :setlocal sw=2 tw=0
 " protect against modeline vunerability
 set nomodeline
 set modelines=0
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+"
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 
 " disable wstrip on git commit messages: it causes syntax highlighting not to
 " work in git commit -v mode.  For now we're just using committia though.
