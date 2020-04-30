@@ -10,6 +10,12 @@ let mapleader="s"
 let g:black_linelength = 80
 let g:black_skip_string_normalization = 1
 
+let g:rustfmt_command = "rustup run stable rustfmt"
+
+" let g:ycm_filetype_blacklist = {
+"     \ 'rust': 1,
+" \}
+
 call plug#begin()
 if g:use_ale
     Plug 'dense-analysis/ale'
@@ -36,7 +42,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 " Plug 'metakirby5/codi.vim'
 Plug 'psf/black'
-" Plug 'racer-rust/vim-racer'
+"Plug 'racer-rust/vim-racer'
 Plug 'rhysd/committia.vim'
 Plug 'rust-lang/rust.vim'
 " support for Sphinx style rst files.
@@ -49,6 +55,8 @@ Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/mako.vim'
 Plug 'vim-scripts/SWIG-syntax'
 Plug 'junegunn/vim-easy-align'
+
+Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
 
 " snippet support
 Plug 'SirVer/ultisnips'
@@ -148,10 +156,10 @@ set ruler
 set backspace=2 " Let backspace delete newlines (\n)
 set splitbelow
 set splitright
-set hidden
 
 set hidden
 
+" prevents the window from being closed when :bd is used
 function! Bdd_()
     execute ':bp | bd #'
 endfunction
@@ -168,6 +176,7 @@ nnoremap <C-j> <C-W><C-J>
 nnoremap <C-k> <C-W><C-K>
 nnoremap <C-l> <C-W><C-L>
 nnoremap <C-h> <C-W><C-H>
+nnoremap <Leader>= <C-W>=
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :bn<CR>
@@ -281,6 +290,7 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
 
+let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_python_interpreter_path = ''
 let g:ycm_python_sys_path = []
 let g:ycm_extra_conf_vim_data = [
@@ -300,7 +310,7 @@ endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
 
-au BufWritePre *.py execute ':Black'
+" au BufWritePre *.py execute ':Black'
 
 " File explorer options
 let g:netrw_liststyle = 3
