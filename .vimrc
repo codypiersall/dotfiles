@@ -195,6 +195,7 @@ nnoremap <Leader>f :FufFile **/<CR>
 nnoremap <Leader>t :FufTag<CR>
 "nnoremap <Leader>b :FufBuffer<CR>
 nnoremap <Leader>b :ls<CR>:b<Space>
+nnoremap <Leader>e :ls<CR>:e<Space>
 
 nnoremap <Leader>y "+yy
 
@@ -287,9 +288,6 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " YouCompleteMe options
 " autoload .ycm_extra_conf file (do not ask for confirmation)
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_global_ycm_extra_conf = $HOME . '/.default_ycm_extra.py'
-
 let g:ycm_complete_in_comments_and_strings = 1
 let g:ycm_python_interpreter_path = ''
 let g:ycm_python_sys_path = []
@@ -349,3 +347,10 @@ nmap ga <Plug>(EasyAlign)
 " disable wstrip on git commit messages: it causes syntax highlighting not to
 " work in git commit -v mode.  For now we're just using committia though.
 " au BufRead,BufNewFile COMMIT_EDITMSG let g:wstrip_auto = 0
+
+" Make vim stop cluttering the working directory
+" https://medium.com/@Aenon/vim-swap-backup-undo-git-2bf353caa02f
+" Double-slash means to preserve path (not just filename)
+set backupdir=~/.vimjunk/
+set directory=~/.vimjunk/
+set undodir=~/.vimjunk/

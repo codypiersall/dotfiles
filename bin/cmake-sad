@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# cmake song-and-dance for building a new project
+
+function usage() {
+    echo "USAGE: $1 [-i] [-m] [builddir] [cmake-options...]"
+    exit
+}
+do_make=
+do_install=
+
+while getopts "mi" opt; do
+    case ${opt} in
+        m)
+            do_make=1
+            ;;
+        i)
+            do_install=1
+            ;;
+        *)
+            echo >&2 "Unkown option \"$1\""
+            usage
+    esac
+done
+shift "$(($OPTIND - 1))"
+
+if [ "$#" -lt 1 ]; then
+    echo "\$# == $#"
+    builddir="build"
+else
+    builddir="$1"
+fi
+
+if [ -e "$builddir" ]; then
+    if [ ! -e "$builddir/CMakeCache.txt" ]; then
+        echo >&2 "directory \"$builddir\" does not appear to be a CMake directory"
+        echo >&2 "remove it manuall if you want to build there."
+        exit
+    fi
+fi
+
+shift
+echo rm -rf "$builddir"
+echo mkdir "$builddir"
+echo cd "$builddir"
+echo cmake $* ..
+if [ ! -z "$do_make" -o ! -z "$do_install" ]; then
+    echo make
+fi
+
+echo do_install "$do_install"
+if [ ! -z "$do_install" ]; then
+    echo make install
+fi
