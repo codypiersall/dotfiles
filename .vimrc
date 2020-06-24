@@ -23,6 +23,7 @@ else
     Plug 'scrooloose/syntastic'
 endif
 
+Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-localvimrc'
 Plug 'eparreno/vim-l9'
@@ -308,7 +309,47 @@ endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
 
-" au BufWritePre *.py execute ':Black'
+python3 << endpy
+
+import vim
+import os.path
+
+def get_pyproject_toml():
+    """
+    Search for pyproject toml from the
+    """
+    # https://vimhelp.org/if_pyth.txt.html#python-vim
+    path = vim.current.buffer.name
+
+    # semantically this should be a while loop, but I don't want to risk an
+    # infinite loop.  That means if we're nested 1024 directories, we're going
+    # to have potentially false results.  But that would be insanely nested.
+    for _ in range(1024):
+        # keep going up a single directory at a time until we hit the root.
+        dir = os.path.dirname(path)
+        if path == dir:
+            # we're at the root, we got nothing.
+            return None
+        test_path = os.path.join(dir, 'pyproject.toml')
+        if os.path.exists(test_path):
+            return test_path
+        else:
+            path = dir
+    else:
+        print("OH NO INFINITE LOOP!!!", file=sys.stderr)
+
+def run_black_if_pyproject_exists():
+    toml = get_pyproject_toml()
+    if toml is None:
+        return
+    with open(toml) as f:
+        contents = f.read()
+    if '[tool.black]' in contents:
+        vim.command("Black")
+
+endpy
+
+au BufWritePre *.py execute ':python3 run_black_if_pyproject_exists()'
 
 " File explorer options
 let g:netrw_liststyle = 3
