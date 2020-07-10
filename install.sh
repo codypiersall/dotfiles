@@ -13,7 +13,8 @@ sudo apt-get install zsh
 sudo apt-get install vim
 sudo apt-get install xclip
 
-python3 ./create_symlinks.py -f
+./mksymlinks
 touch ~/.zshrc_local
+touch ~/.bashrc_local
 mkdir -p ~/.goto
-
+mkdir ~/.vimjunk
