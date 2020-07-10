@@ -11,8 +11,8 @@ function ln_dir_contents() {
         if [ "$base" = . -o "$base" = ..  -o "$base" = "*" ]; then
             continue
         fi
-        echo ln -sf "$fname" "$dest_dir/$(basename $fname)"
-        ln -sf "$fname" "$dest_dir/$(basename $fname)"
+        echo ln -sfn "$fname" "$dest_dir/$(basename $fname)"
+        ln -sfn "$fname" "$dest_dir/$(basename $fname)"
     done
 }
 
