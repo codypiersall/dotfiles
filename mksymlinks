@@ -8,7 +8,7 @@ function ln_dir_contents() {
     dest_dir="$2"
     for fname in "$src_dir"/* "$src_dir"/.*; do
         base="$(basename $fname)"
-        if [ "$base" = . -o "$base" = .. ]; then
+        if [ "$base" = . -o "$base" = ..  -o "$base" = "*" ]; then
             continue
         fi
         echo ln -sf "$fname" "$dest_dir/$(basename $fname)"
