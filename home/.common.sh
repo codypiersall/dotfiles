@@ -11,6 +11,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export DISABLE_AUTO_TITLE='true'
 mkdir -p $WORKON_HOME
 
+# get virtualenvwrapper to work on different platforms
 if [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
     export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
     export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
@@ -19,6 +20,12 @@ elif [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     source /usr/local/bin/virtualenvwrapper_lazy.sh
+elif [ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
+    # ubuntu 20.04 location
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 fi
 
 # For colorized gcc output
