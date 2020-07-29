@@ -51,7 +51,7 @@ Plug 'Rykka/riv.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-scripts/Conque-GDB'
+" Plug 'vim-scripts/Conque-GDB'
 Plug 'vim-scripts/FuzzyFinder'
 Plug 'vim-scripts/mako.vim'
 Plug 'vim-scripts/SWIG-syntax'
@@ -245,9 +245,10 @@ if g:use_ale
         \ 'python': ['flake8'],
         \ 'systemverilog': ['verilator'],
         \ 'verilog': ['verilator'],
+        \ 'c': ['clangd'],
     \}
     " E501: line too long
-    " W503: line break before binary operator 
+    " W503: line break before binary operator
     let g:ale_python_flake8_options = '--ignore E501,W503'
     let g:ale_tex_chktex_options = " -n8 "
     " https://github.com/dense-analysis/ale/issues/1470
