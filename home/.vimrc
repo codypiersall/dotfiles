@@ -195,9 +195,11 @@ nnoremap <Leader>z <C-z>
 
 nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
-" Fuzzy Finder
+" Fuzzy Finder, ripgrep, tag search
 nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>T :Tags<Space>
+
 nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>e :ls<CR>:e<Space>
 
