@@ -23,6 +23,7 @@ else
     Plug 'scrooloose/syntastic'
 endif
 
+Plug 'hardcoreplayers/oceanic-material'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-localvimrc'
@@ -52,9 +53,11 @@ Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'Valloric/YouCompleteMe'
 " Plug 'vim-scripts/Conque-GDB'
-Plug 'vim-scripts/FuzzyFinder'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/mako.vim'
 Plug 'vim-scripts/SWIG-syntax'
+"Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
@@ -192,9 +195,9 @@ nnoremap <Leader>z <C-z>
 
 nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
-nnoremap <Leader>f :FufFile **/<CR>
-nnoremap <Leader>t :FufTag<CR>
-"nnoremap <Leader>b :FufBuffer<CR>
+" Fuzzy Finder
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>r :Rg<Space>
 nnoremap <Leader>b :ls<CR>:b<Space>
 nnoremap <Leader>e :ls<CR>:e<Space>
 
@@ -396,3 +399,6 @@ nmap ga <Plug>(EasyAlign)
 set backupdir=~/.vimjunk/
 set directory=~/.vimjunk/
 set undodir=~/.vimjunk/
+
+set background=dark
+colorscheme oceanic_material

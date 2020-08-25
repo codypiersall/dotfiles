@@ -28,6 +28,8 @@ elif [ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
     source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 fi
 
+# ripgrep is dumb and doesn't have a default config file.
+export RIPGREP_CONFIG_PATH="$HOME/.rgrc"
 # For colorized gcc output
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 export EDITOR=vim
