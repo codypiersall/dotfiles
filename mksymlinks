@@ -2,6 +2,9 @@
 
 this_dir="$(realpath $(dirname $0))"
 mkdir -p ~/.config
+# we only track a couple files in the nvim directory, because that's also where
+# Plug (the package manager) installs stuff.
+mkdir -p ~/.config/nvim
 
 function ln_dir_contents() {
     src_dir="$1"
@@ -18,3 +21,4 @@ function ln_dir_contents() {
 
 ln_dir_contents "$this_dir/home" "$HOME"
 ln_dir_contents "$this_dir/.config" "$HOME/.config"
+ln_dir_contents "$this_dir/nvim" "$HOME/.config/nvim"
