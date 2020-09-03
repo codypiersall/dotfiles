@@ -10,6 +10,7 @@
 	editor = vim
 	autocrlf = input
 	pager = less -SFX
+    excludesfile = ~/.gitignore
 [diff]
 	tool = vimdiff
 [difftool "meld"]
