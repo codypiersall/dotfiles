@@ -1,6 +1,11 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" change these to enable/disable coc, ale, and ycm
+let using_ale = 1
+let using_coc = 0
+let using_ycm = 1
+
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
 let mapleader="s"
@@ -10,21 +15,22 @@ let g:black_skip_string_normalization = 1
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
-" let g:ycm_filetype_blacklist = {
-"     \ 'rust': 1,
-" \}
-"
 let g:tex_flavor = 'latex'
 call plug#begin()
-" Plug 'dense-analysis/ale'
+if using_ale
+    Plug 'dense-analysis/ale'
+endif
 
+" excellent python syntax highlighting
+Plug 'numirias/semshi'
+" color scheme
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-localvimrc'
 Plug 'eparreno/vim-l9'
 " Plug 'ervandew/supertab'
-Plug 'hynek/vim-python-pep8-indent'
+" Plug 'hynek/vim-python-pep8-indent'
 Plug 'isRuslan/vim-es6'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'kergoth/vim-bitbake'
@@ -43,9 +49,14 @@ Plug 'rust-lang/rust.vim'
 Plug 'Rykka/riv.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
-" Plug 'Valloric/YouCompleteMe'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+if using_ycm
+    Plug 'Valloric/YouCompleteMe'
+endif
+if using_coc
+    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+endif
 " Plug 'vim-scripts/Conque-GDB'
+Plug 'jceb/vim-orgmode'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'vim-scripts/mako.vim'
@@ -64,8 +75,6 @@ call plug#end()
 let g:UltiSnipsExpandTrigger="<S-Tab>"
 let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<>"
-
-"let g:ycm_key_list_previous_completion = ["<Up>"]
 
 filetype plugin indent on    " required
 
@@ -226,26 +235,6 @@ let g:localvimrc_ask = 0
 set backup
 set writebackup
 
-let g:ale_sign_column_always = 1
-let g:ale_open_list = 1
-let g:ale_lint_on_text_changed = 'never'
-
-let g:ale_linters = {
-    \ 'python': ['flake8'],
-    \ 'systemverilog': ['verilator'],
-    \ 'verilog': ['verilator'],
-    \ 'c': ['clangd'],
-\}
-
-" ale config
-" E501: line too long
-" W503: line break before binary operator
-let g:ale_python_flake8_options = '--ignore E501,W503'
-let g:ale_tex_chktex_options = " -n8 "
-" https://github.com/dense-analysis/ale/issues/1470
-" Remove this line when Vim 8.1 is used.
-let g:ale_echo_cursor = 0
-
 
 " FuzzyFinder stuff, taken from http://stackoverflow.com/a/17277011/1612701
 " Truth be told, I don't remember what these do, but I must have
@@ -265,20 +254,7 @@ let g:fuf_dir_exclude = '\v'.s:startname.'('.s:dirname.')'.s:endname
 let g:fuf_enumeratingLimit = 60
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
-" YouCompleteMe options
-" autoload .ycm_extra_conf file (do not ask for confirmation)
-let g:ycm_complete_in_comments_and_strings = 1
-let g:ycm_python_interpreter_path = ''
-let g:ycm_python_sys_path = []
-let g:ycm_extra_conf_vim_data = [
-  \  'g:ycm_python_interpreter_path',
-  \  'g:ycm_python_sys_path'
-  \]
-
-
 let g:wstrip_auto = 1
-highlight link YcmErrorSection Error
-highlight link ALEError Error
 
 function PyFile()
     setlocal foldmethod=indent
@@ -380,7 +356,15 @@ set updatetime=300
 
 " coc stuff gets its own vim config file (along with its own json config file).
 " It's pretty needy.
-exec 'so ' . stdpath('config') . '/coc.vim'
+" Don't source coc *and* ale
+if using_coc
+    exec 'so ' . stdpath('config') . '/coc.vim'
+endif
+if using_ale
+    exec 'so ' . stdpath('config') . '/ale.vim'
+endif
+if using_ycm
+    exec 'so ' . stdpath('config') . '/ycm.vim'
+endif
 
-"set background=dark
 colorscheme oceanic_material

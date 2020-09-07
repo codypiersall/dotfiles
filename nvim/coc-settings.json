@@ -2,6 +2,28 @@
     "python.jediEnabled": false,
     "python.autoComplete.extraPaths": ["."],
 
-    "diagnostic.checkCurrentLine": true
+    "diagnostic.checkCurrentLine": true,
+    "diagnostic.enableMessage": "always",
+    "diagnostic.enable": true,
+
+    "languageserver": {
+        /*
+        "hdlChecker": {
+            "command": "hdl_checker",
+            "args": [
+                "--lsp"
+            ],
+            "filetypes": [
+                "vhdl",
+                "verilog",
+                "systemverilog"
+            ]
+        }
+        "svls": {
+            "command": "svls",
+            "filetypes": ["verilog", "systemverilog"]
+        }
+        */
+    }
 }
 
