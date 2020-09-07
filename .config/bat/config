@@ -1,3 +1,4 @@
---map-syntax sv:v
---map-syntax vh:v
---map-syntax svh:v
+--map-syntax "*.sv:Verilog"
+--map-syntax "*.vh:Verilog"
+--map-syntax "*.svh:Verilog"
+--map-syntax ".lvimrc:VimL"
