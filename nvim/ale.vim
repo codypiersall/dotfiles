@@ -7,6 +7,7 @@ let g:ale_linters = {
     \ 'systemverilog': ['verilator'],
     \ 'verilog': ['verilator'],
     \ 'c': ['clangd'],
+    \ 'cpp': ['clangd'],
 \}
 
 " E501: line too long
