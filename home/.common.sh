@@ -8,6 +8,7 @@ export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export BAT_PAGER="less -RXF"
 export DISABLE_AUTO_TITLE='true'
 mkdir -p $WORKON_HOME
 

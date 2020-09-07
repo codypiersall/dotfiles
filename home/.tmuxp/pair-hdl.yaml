@@ -1,0 +1,14 @@
+session_name: 'pair-hdl'
+windows:
+- focus: 'true'
+  layout: 9ea4,156x39,0,0{78x39,0,0,0,77x39,79,0,1}
+  options: {}
+  panes:
+  - focus: 'true'
+  - shell_command:
+      - cd pair_spi
+      - gtkwave pair_spi.gtkw &
+      - disown
+      - when-changed -1 -s *.cpp *.sv *.vh -c make
+  start_directory: /home/cody/projects/pair/wni-pair/vivado/src/hdl
+  window_name: pair-hdl
