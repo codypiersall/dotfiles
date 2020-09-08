@@ -3,8 +3,8 @@ filetype off                  " required
 
 " change these to enable/disable coc, ale, and ycm
 let using_ale = 1
-let using_coc = 0
-let using_ycm = 1
+let using_coc = 1
+let using_ycm = 0
 
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
@@ -368,3 +368,13 @@ if using_ycm
 endif
 
 colorscheme oceanic_material
+
+" disable relative line numbers whenever out of buffer
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set relativenumber
+    autocmd WinLeave * set norelativenumber
+augroup END
+
+" highlight status bar of main window differently than othes.
+highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
