@@ -10,6 +10,9 @@ export PYTHONSTARTUP=~/.pythonrc
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export BAT_PAGER="less -RXF"
 export DISABLE_AUTO_TITLE='true'
+# makes Vim use fd (the Rust package) which is better because it respects
+# gitignore
+export FZF_DEFAULT_COMMAND='fd --type f'
 mkdir -p $WORKON_HOME
 
 # get virtualenvwrapper to work on different platforms

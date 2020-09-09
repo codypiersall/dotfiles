@@ -8,10 +8,10 @@ git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # for the tool pdftotext, useful in git diffs
-sudo apt-get install poppler-utils
-sudo apt-get install zsh
-sudo apt-get install vim
-sudo apt-get install xclip
+sudo apt install poppler-utils
+sudo apt install zsh
+sudo apt install vim
+sudo apt install xclip
 
 ./mksymlinks
 touch ~/.zshrc_local
