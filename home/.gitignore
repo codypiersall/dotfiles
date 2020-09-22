@@ -6,6 +6,8 @@
 *.exe
 *.o
 *.so
+*.pyc
+__pycache__
 
 # Dev tool caches and build directories #
 #########################################
@@ -13,6 +15,8 @@
 .ccls-cache
 # verilator creates this directory
 obj_dir
+compile_commands.json
+.hdl_checker
 
 # Packages #
 ############
@@ -52,4 +56,6 @@ Thumbs.db
 node_modules
 yarn.lock
 
-
+# Xilinx stuff
+xsim.dir
+xvlog.pb
