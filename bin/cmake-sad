@@ -40,15 +40,14 @@ if [ -e "$builddir" ]; then
 fi
 
 shift
-echo rm -rf "$builddir"
-echo mkdir "$builddir"
-echo cd "$builddir"
-echo cmake $* ..
+rm -rf "$builddir"
+mkdir "$builddir"
+cd "$builddir"
+cmake $* ..
 if [ ! -z "$do_make" -o ! -z "$do_install" ]; then
-    echo make
+    make
 fi
 
-echo do_install "$do_install"
 if [ ! -z "$do_install" ]; then
-    echo make install
+    make install
 fi

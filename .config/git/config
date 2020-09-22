@@ -25,14 +25,13 @@
 	sslverify = false
 [include]
 	path = .gitconfig_local
-[user]
-	email = cody.piersall@gmail.com
-	name = Cody Piersall
 [credential "https://gitlab.com"]
 	username = codypiersall
 [credential "https://github.com"]
 	username = codypiersall
 [credential "https://git.arrc.ou.edu"]
+	username = pier3595
+[credential "https://sgit.arrc.ou.edu"]
 	username = pier3595
 [difftool]
 	prompt = false
