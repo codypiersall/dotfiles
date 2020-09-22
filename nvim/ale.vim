@@ -8,6 +8,7 @@ let g:ale_linters = {
     \ 'verilog': ['verilator'],
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
+    \ 'vhdl': ['hdl-checker'],
 \}
 
 " E501: line too long
@@ -20,3 +21,8 @@ let g:ale_echo_cursor = 0
 
 highlight link ALEError Error
 
+function! ALEInfo2_()
+    let thing = execute("ALEInfo") | enew | put =thing
+endfunction
+
+command! ALEInfo2 call ALEInfo2_()

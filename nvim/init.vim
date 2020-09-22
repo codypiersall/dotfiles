@@ -49,6 +49,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'Rykka/riv.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
+Plug 'vhda/verilog_systemverilog.vim'
 if using_ycm
     Plug 'Valloric/YouCompleteMe'
 endif
@@ -180,6 +181,7 @@ nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>D :bd!<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 

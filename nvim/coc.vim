@@ -126,7 +126,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " Add (Neo)Vim's native statusline support.
 " NOTE: Please see `:h coc-status` for integrations with external plugins that
 " provide custom statusline: lightline.vim, vim-airline.
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+"set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Mappings for CoCList
 " Show all diagnostics.
@@ -144,7 +144,10 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Do default action for previous item.
 " nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
 
 " make root where the setup.py script is
 au FileType python let b:coc_root_patterns = ['.git', '.env', 'setup.py']
+
