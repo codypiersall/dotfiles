@@ -1,6 +1,10 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+set term=xterm
+set termguicolors
+let g:oceanic_material_background = 'darker'
+
 let g:use_ale = 1
 
 " Set mapleader to something other than below so plugins do not overwrite my
@@ -315,6 +319,7 @@ endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
 
+if has('python3')
 python3 << endpy
 
 import vim
@@ -354,8 +359,9 @@ def run_black_if_pyproject_exists():
         vim.command("Black")
 
 endpy
-
 au BufWritePre *.py execute ':python3 run_black_if_pyproject_exists()'
+" end python3 part
+end
 
 " File explorer options
 let g:netrw_liststyle = 3
