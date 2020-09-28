@@ -16,9 +16,7 @@ let g:black_skip_string_normalization = 1
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
-" let g:ycm_filetype_blacklist = {
-"     \ 'rust': 1,
-" \}
+let g:tex_flavor = 'latex'
 
 call plug#begin()
 if g:use_ale
