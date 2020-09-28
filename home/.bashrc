@@ -74,4 +74,3 @@ function _zc() {
 
 source /etc/profile.d/bash_completion.sh
 alias zc='set -f; _zc'
-source /home/cody/.config/broot/launcher/bash/br

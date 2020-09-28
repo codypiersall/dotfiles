@@ -94,7 +94,3 @@ compinit
 
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
-
-if [ -e "$HOME/.config/broot/launcher/bash/br" ]; then
-    source "$HOME/.config/broot/launcher/bash/br"
-fi
