@@ -8,7 +8,7 @@ let using_ycm = 0
 
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
-let mapleader="s"
+let mapleader=","
 
 let g:black_linelength = 80
 let g:black_skip_string_normalization = 1
@@ -21,6 +21,8 @@ if using_ale
     Plug 'dense-analysis/ale'
 endif
 
+" show modified/added lines
+Plug 'airblade/vim-gitgutter'
 " excellent python syntax highlighting
 Plug 'numirias/semshi'
 " color scheme
