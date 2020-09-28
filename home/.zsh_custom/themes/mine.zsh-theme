@@ -47,5 +47,5 @@ function virtualenv_info(){
 }
 
 PROMPT='%{%f%k%b%}
-[%F{red}%D{%I:%M%p}%F{reset}] $(virtualenv_info)%{%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
+[%F{red}%D{%I:%M%p}%F{reset}:zsh] $(virtualenv_info)%{%B%F{green}%}%n%{%B%F{blue}%}@%{%B%F{cyan}%}%m%{%B%F{green}%} %{%b%F{yellow}%}%~%{%B%F{green}%}$(git_prompt_info)%E%{%f%k%b%}
 %{%}$(_prompt_char)%{%} %#%{%f%k%b%} '
