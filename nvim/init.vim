@@ -18,6 +18,8 @@ let g:black_skip_string_normalization = 1
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
+let g:oceanic_material_background = 'darker'
+
 let g:tex_flavor = 'latex'
 call plug#begin()
 if using_ale
