@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1 
+set termguicolors
+
 " change these to enable/disable coc, ale, and ycm
 let using_ale = 1
 let using_coc = 1
