@@ -60,3 +60,7 @@ yarn.lock
 # Xilinx stuff
 xsim.dir
 xvlog.pb
+
+# my own special files that I want to have ignored
+
+*IGNORE*
