@@ -21,6 +21,7 @@ let g:rustfmt_command = "rustup run stable rustfmt"
 let g:oceanic_material_background = 'darker'
 
 let g:tex_flavor = 'latex'
+let g:python3_host_prog = $HOME . "/.envs/neovim/bin/python"
 call plug#begin()
 if using_ale
     Plug 'dense-analysis/ale'
