@@ -1,14 +1,19 @@
 # https://github.com/blinks zsh theme
 
 function _prompt_char() {
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
-    echo "%{%F{green}%}$(git rev-parse --abbrev-ref HEAD)%{%f%k%b%}"
+  if [ ! -z "$GIT_PROMPTINFO_ENABLED" ]; then
+      if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+        echo "%{%F{green}%}$(git rev-parse --abbrev-ref HEAD)%{%f%k%b%}"
+      else
+        echo ' '
+      fi
   else
     echo ' '
   fi
 }
 
 git_prompt_info () {
+  if [ ! -z "$GIT_PROMPTINFO_ENABLED" ]; then
     local ref
     if [[ "$(command git rev-parse --is-inside-work-tree > /dev/null 2>&1)" ]]; then
         if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]] then
@@ -17,6 +22,7 @@ git_prompt_info () {
             echo "$ZSH_THEME_GIT_PROMPT_PREFIX${ref}$ZSH_THEME_GIT_PROMPT_SUFFIX"
         fi
     fi
+  fi
 }
 
 # This theme works with both the "dark" and "light" variants of the

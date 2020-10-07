@@ -13,6 +13,7 @@ export DISABLE_AUTO_TITLE='true'
 # makes Vim use fd (the Rust package) which is better because it respects
 # gitignore
 export FZF_DEFAULT_COMMAND='fd --type f'
+export GIT_PROMPTINFO_ENABLED=1
 mkdir -p $WORKON_HOME
 
 # get virtualenvwrapper to work on different platforms
