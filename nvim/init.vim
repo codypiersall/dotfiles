@@ -57,7 +57,7 @@ Plug 'Rykka/riv.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'vhda/verilog_systemverilog.vim'
-if using_ycm
+if using_ycm && has('python3')
     Plug 'Valloric/YouCompleteMe'
 endif
 if using_coc
@@ -75,8 +75,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
 
 " snippet support
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+if has('python3')
+    Plug 'SirVer/ultisnips'
+    Plug 'honza/vim-snippets'
+end
 call plug#end()
 
 " Trigger config for snippets
@@ -272,6 +274,7 @@ endfunction
 
 au BufNewFile,BufRead *.py call PyFile()
 
+if has('python3')
 python3 << endpy
 
 import vim
@@ -313,6 +316,7 @@ def run_black_if_pyproject_exists():
 endpy
 
 au BufWritePre *.py execute ':python3 run_black_if_pyproject_exists()'
+endif
 
 " File explorer options
 let g:netrw_liststyle = 3
@@ -372,7 +376,7 @@ endif
 if using_ale
     exec 'so ' . stdpath('config') . '/ale.vim'
 endif
-if using_ycm
+if using_ycm && has('python3')
     exec 'so ' . stdpath('config') . '/ycm.vim'
 endif
 
