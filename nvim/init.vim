@@ -29,6 +29,7 @@ endif
 
 " show modified/added lines
 Plug 'airblade/vim-gitgutter'
+Plug 'qpkorr/vim-bufkill'
 " excellent python syntax highlighting
 Plug 'numirias/semshi'
 " color scheme
@@ -190,8 +191,7 @@ nnoremap <Leader>= <C-W>=
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
-nnoremap <Leader>d :bd<CR>
-nnoremap <Leader>D :bd!<CR>
+nnoremap <Leader>d :BD<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 
@@ -391,4 +391,5 @@ augroup BgHighlight
 augroup END
 
 " highlight status bar of main window differently than othes.
-highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray
+highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
