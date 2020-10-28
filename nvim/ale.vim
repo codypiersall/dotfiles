@@ -13,7 +13,7 @@ let g:ale_linters = {
 
 " E501: line too long
 " W503: line break before binary operator
-let g:ale_python_flake8_options = '--ignore E501,W503'
+let g:ale_python_flake8_options = '--ignore E501,W503,E203'
 let g:ale_tex_chktex_options = " -n8 "
 " https://github.com/dense-analysis/ale/issues/1470
 " Remove this line when Vim 8.1 is used.
