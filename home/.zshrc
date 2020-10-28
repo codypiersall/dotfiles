@@ -92,5 +92,7 @@ yd() {
 source "$HOME/.zshrc_local"
 compinit
 
+# gc is set as git commit -v, but gittia (vim plugin) is better.
+alias gc='git commit'
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
