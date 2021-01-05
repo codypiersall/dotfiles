@@ -3,7 +3,7 @@
 # .zshrc and .bashrc source this script.
 # python virtualenv stuff
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
@@ -17,7 +17,12 @@ export GIT_PROMPTINFO_ENABLED=1
 mkdir -p $WORKON_HOME
 
 # get virtualenvwrapper to work on different platforms
-if [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
+if [ -e "/usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh" ]; then
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
+elif [ -e "$HOME/.local/bin/virtualenvwrapper_lazy.sh" ]; then
     export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
     export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
     source "$HOME/.local/bin/virtualenvwrapper_lazy.sh"
@@ -25,12 +30,6 @@ elif [ -e /usr/local/bin/virtualenvwrapper_lazy.sh ]; then
     export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
     source /usr/local/bin/virtualenvwrapper_lazy.sh
-elif [ -e /usr/share/virtualenvwrapper/virtualenvwrapper.sh ]; then
-    # ubuntu 20.04 location
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
 fi
 
 # ripgrep is dumb and doesn't have a default config file.
