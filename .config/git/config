@@ -2,7 +2,7 @@
 [alias]
 	ci = commit
 	st = status -u
-	meld = difftool -y --dir-diff
+    meld = difftool --tool=meld -y --dir-diff
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
 	vimdiff = difftool
@@ -35,5 +35,6 @@
 	username = pier3595
 [difftool]
 	prompt = false
+    trustExitCode = true
 [diff "astextplain"]
 	textconv = astextplain
