@@ -11,7 +11,7 @@ let g:use_ale = 1
 " keys.
 let mapleader="s"
 
-let g:black_linelength = 80
+let g:black_linelength = 88
 let g:black_skip_string_normalization = 1
 
 let g:rustfmt_command = "rustup run stable rustfmt"
@@ -129,7 +129,7 @@ set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
 
-set textwidth=79    " Maximum width of text that is being inserted. A longer
+set textwidth=87    " Maximum width of text that is being inserted. A longer
                     " line will be broken after white space to get this width.
 
 set formatoptions=c,l,n,q,r,t " This is a sequence of letters which describes how
