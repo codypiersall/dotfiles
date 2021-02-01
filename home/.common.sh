@@ -8,6 +8,7 @@ export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+export MANROFFOPT="-c"
 export BAT_PAGER="less -RXF"
 export DISABLE_AUTO_TITLE='true'
 # makes Vim use fd (the Rust package) which is better because it respects
