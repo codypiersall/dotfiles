@@ -7,8 +7,9 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+if command -v nvim > /dev/null 2>&1; then
+    export MANPAGER="nvim -c 'set ft=man' -"
+fi
 export BAT_PAGER="less -RXF"
 export DISABLE_AUTO_TITLE='true'
 # makes Vim use fd (the Rust package) which is better because it respects
