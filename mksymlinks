@@ -22,3 +22,7 @@ function ln_dir_contents() {
 ln_dir_contents "$this_dir/home" "$HOME"
 ln_dir_contents "$this_dir/.config" "$HOME/.config"
 ln_dir_contents "$this_dir/nvim" "$HOME/.config/nvim"
+
+touch ~/.bashrc_local
+touch ~/.zshrc_local
+mkdir -p ~/.vimjunk
