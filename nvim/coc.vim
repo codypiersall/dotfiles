@@ -96,7 +96,8 @@ nmap <leader>a  <Plug>(coc-codeaction-selected)
 " Remap keys for applying codeAction to the current buffer.
 nmap <leader>ac  <Plug>(coc-codeaction)
 " Apply AutoFix to problem on the current line.
-nmap <leader>qf  <Plug>(coc-fix-current)
+" nmap <leader>qf  <Plug>(coc-fix-current)
+nmap <F9> <Plug>(coc-fix-current)
 
 " Map function and class text objects
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -130,7 +131,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> <space>a  :CocDiagnostics<cr>
 " Manage extensions.
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " Show commands.
@@ -146,7 +147,6 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " Resume latest coc list.
 
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 
 " make root where the setup.py script is
 au FileType python let b:coc_root_patterns = ['setup.py', '.git', '.env']
