@@ -43,6 +43,7 @@ Plug 'eparreno/vim-l9'
 Plug 'isRuslan/vim-es6'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'kergoth/vim-bitbake'
+Plug 'Cognoscan/vim-vhdl'
 Plug 'lambdalisue/vim-cython-syntax'
 Plug 'lervag/vimtex'
 Plug 'majutsushi/tagbar'
@@ -75,6 +76,7 @@ Plug 'vim-scripts/SWIG-syntax'
 Plug 'junegunn/vim-easy-align'
 
 Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
+Plug 'dzeban/vim-log-syntax'
 
 " snippet support
 if has('python3')
