@@ -65,3 +65,4 @@ xvlog.pb
 
 *IGNORE*
 .eggs
+.ipynb_checkpoints
