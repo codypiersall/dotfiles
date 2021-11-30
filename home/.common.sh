@@ -127,6 +127,15 @@ function initgit() {
     git commit -m 'Initial commit.'
 }
 
+# countdown timer; takes number of seconds to countdown
+function countdown(){
+   date1=$((`date +%s` + $1));
+   while [ "$date1" -ge `date +%s` ]; do
+     echo -ne "$(date -u --date @$(($date1 - `date +%s`)) +%H:%M:%S)\r";
+     sleep 0.1
+   done
+}
+
 if [ -e "$HOME/.config/broot/launcher/bash/br" ]; then
     source "$HOME/.config/broot/launcher/bash/br"
 fi
