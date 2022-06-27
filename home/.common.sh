@@ -20,7 +20,7 @@ mkdir -p $WORKON_HOME
 
 # get virtualenvwrapper to work on different platforms
 if [ -e "/usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh" ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.8
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
     export VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
     export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
     source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
