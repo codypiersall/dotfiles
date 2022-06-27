@@ -9,6 +9,16 @@ if [ ! -e "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
+if ! which npm; then
+    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+    sudo apt-get install -y nodejs
+    sudo npm install -g yarn
+fi
+
+mkdir ~/dev
+git clone https://Gogh-Co/Gogh ~/dev/Gogh
+sudo apt install dconf-cli uuid-runtime
+
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # don't forget to run install with Ctrl+B-I in Tmux!
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -8,7 +8,7 @@ export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
 if command -v nvim > /dev/null 2>&1; then
-    export MANPAGER="nvim -c 'set ft=man' -"
+    export MANPAGER="nvim +Man!"
 fi
 export BAT_PAGER="less -RXF"
 export DISABLE_AUTO_TITLE='true'
