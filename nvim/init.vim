@@ -77,17 +77,19 @@ Plug 'junegunn/vim-easy-align'
 
 Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
 Plug 'dzeban/vim-log-syntax'
+Plug 'zivyangll/git-blame.vim'
 
 " snippet support
 if has('python3')
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
+    " Plug 'SirVer/ultisnips'
+    " Plug 'honza/vim-snippets'
 end
 call plug#end()
 
 " Trigger config for snippets
-let g:UltiSnipsExpandTrigger="<S-Tab>"
-let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
+" commented out for now since it interferes with coc completion
+" let g:UltiSnipsExpandTrigger="<S-Tab>"
+" let g:UltiSnipsJumpForwardTrigger="<S-Tab>"
 " let g:UltiSnipsJumpBackwardTrigger="<>"
 
 filetype plugin indent on    " required
@@ -212,6 +214,7 @@ nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>e :ls<CR>:e<Space>
 
 nnoremap <Leader>y "+yy
+nnoremap <Leader>g :call gitblame#echo()<CR>
 
 
 " These are the generated ctags for the Linux source.
