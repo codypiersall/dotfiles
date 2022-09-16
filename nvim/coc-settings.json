@@ -5,6 +5,7 @@
     "diagnostic.checkCurrentLine": true,
     "diagnostic.enableMessage": "always",
     "diagnostic.enable": true,
+    "suggest.noselect": true,
 
     "languageserver": {
         /*
