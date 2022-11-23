@@ -66,3 +66,7 @@ xvlog.pb
 *IGNORE*
 .eggs
 .ipynb_checkpoints
+
+# binary numpy array data
+*.npy
+.cache

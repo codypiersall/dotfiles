@@ -5,7 +5,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 " change these to enable/disable coc, ale, and ycm
-let using_ale = 1
+let using_ale = 0
 let using_coc = 1
 let using_ycm = 0
 
@@ -14,7 +14,8 @@ let using_ycm = 0
 let mapleader=","
 
 let g:black_linelength = 88
-let g:black_skip_string_normalization = 1
+" let g:black_skip_string_normalization = 1
+let g:black_string_normalization = "false"
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
@@ -31,7 +32,7 @@ endif
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
 " excellent python syntax highlighting
-Plug 'numirias/semshi'
+" Plug 'numirias/semshi'
 " color scheme
 Plug 'hardcoreplayers/oceanic-material'
 Plug 'cespare/vim-toml'
