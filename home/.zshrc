@@ -94,5 +94,9 @@ compinit
 
 # gc is set as git commit -v, but gittia (vim plugin) is better.
 alias gc='git commit'
+function ncf() {
+    cat "$1" | pv | netcat 192.168.2.2 7000
+}
+
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh

@@ -9,6 +9,7 @@ let g:ale_linters = {
     \ 'c': ['clangd'],
     \ 'cpp': ['clangd'],
     \ 'vhdl': ['hdl-checker'],
+    \ 'rust': ['rls'],
 \}
 
 " E501: line too long

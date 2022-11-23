@@ -38,3 +38,6 @@
     trustExitCode = true
 [diff "astextplain"]
 	textconv = astextplain
+[user]
+	email = cody@ou.edu
+	name = Cody Piersall
