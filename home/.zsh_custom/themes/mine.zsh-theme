@@ -2,7 +2,7 @@
 
 function _prompt_char() {
   if [ ! -z "$GIT_PROMPTINFO_ENABLED" ]; then
-      if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+      if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1 && git rev-parse HEAD >/dev/null 2>&1); then
         echo "%{%F{green}%}$(git rev-parse --abbrev-ref HEAD)%{%f%k%b%}"
       else
         echo ' '
