@@ -81,7 +81,6 @@ alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --e
 alias xopen='xdg-open'
 alias cclip='xclip -selection clipboard'
 alias weather='curl wttr.in'
-alias vim=nvim
 
 # Codi
 # Usage: codi [filetype] [filename]

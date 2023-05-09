@@ -61,6 +61,7 @@ Plug 'Rykka/riv.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'vhda/verilog_systemverilog.vim'
+Plug 'jesseleite/vim-agriculture'
 if using_ycm && has('python3')
     Plug 'Valloric/YouCompleteMe'
 endif
@@ -208,7 +209,7 @@ nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
 " Fuzzy Finder, ripgrep, tag search
 nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>r :Rg<Space>
+nnoremap <Leader>r :RgRaw<Space>
 nnoremap <Leader>T :Tags<Space>
 
 nnoremap <Leader>b :Buffers<CR>
