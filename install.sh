@@ -31,7 +31,7 @@ sudo apt install -y neovim
 sudo apt install -y xclip
 
 # dev stuff
-sudo apt install build-essential python3-dev python3-virtualenvwrapper
+sudo apt install -y build-essential python3-dev python3-virtualenvwrapper
 
 ./mksymlinks
 touch ~/.zshrc_local
@@ -40,4 +40,6 @@ mkdir -p ~/.goto
 mkdir ~/.vimjunk
 
 # install rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+sudo update-alternatives --set vim /usr/bin/nvim
+sudo update-alternatives --set editor /usr/bin/nvim
