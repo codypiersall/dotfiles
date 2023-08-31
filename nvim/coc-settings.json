@@ -8,6 +8,7 @@
 
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
+    "clangd.trace.file": "/home/cody/clangd_log.txt",
 
     "languageserver": {
         /*
@@ -27,6 +28,7 @@
             "filetypes": ["verilog", "systemverilog"]
         }
         */
-    }
+    },
+    "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/15.0.3/clangd_15.0.3/bin/clangd"
 }
 

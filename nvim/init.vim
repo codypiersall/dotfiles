@@ -28,6 +28,18 @@ if using_ale
     Plug 'dense-analysis/ale'
 endif
 
+" https://github.com/euclio/vim-markdown-composer
+function! BuildComposer(info)
+  if a:info.status != 'unchanged' || a:info.force
+    if has('nvim')
+      !cargo build --release --locked
+    else
+      !cargo build --release --locked --no-default-features --features json-rpc
+    endif
+  endif
+endfunction
+
+let g:python_highlight_all = 1
 " show modified/added lines
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
@@ -62,6 +74,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tweekmonster/wstrip.vim'
 Plug 'vhda/verilog_systemverilog.vim'
 Plug 'jesseleite/vim-agriculture'
+Plug 'vim-python/python-syntax'
 if using_ycm && has('python3')
     Plug 'Valloric/YouCompleteMe'
 endif
@@ -80,6 +93,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mesonbuild/meson', {'rtp': 'data/syntax-highlighting/vim'}
 Plug 'dzeban/vim-log-syntax'
 Plug 'zivyangll/git-blame.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-conflicted'
+" https://github.com/euclio/vim-markdown-composer
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 
 " snippet support
 if has('python3')
@@ -217,6 +234,7 @@ nnoremap <Leader>e :ls<CR>:e<Space>
 
 nnoremap <Leader>y "+yy
 nnoremap <Leader>g :call gitblame#echo()<CR>
+nnoremap <Leader>m :NERDTreeToggle<CR>
 
 
 " These are the generated ctags for the Linux source.
