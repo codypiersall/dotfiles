@@ -143,3 +143,4 @@ fi
 
 alias vimdiff='nvim -d'
 export CMAKE_EXPORT_COMPILE_COMMANDS=on
+export MAKEFLAGS="-j $(nproc)"
