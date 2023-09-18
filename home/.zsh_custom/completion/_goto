@@ -1,7 +1,26 @@
-#compdef goto setgoto rmgoto
+#compdef goto
 
 _goto() {
     comp="$(cd ~/.goto; ls *[^~])"
     _arguments "1: :($comp)"
 }
 _goto "$@"
+
+
+# compdef goto
+#
+# comp="$(cd ~/.goto; ls *[^~])"
+# if [[ ${#words} -ge 2 ]]; then
+#     local testdir="$(cat ~/.goto/${words[2]})"
+#     # echo "testdir $testdir"
+#     if [ -e $testdir ]; then
+#         # echo 'yes yes yes'
+#         cmp2="$(ls $testdir/)"
+#         _arguments "1: :($comp) 2: :($cmp2)"
+#     else
+#         _arguments "1: :($comp)"
+#     fi
+# else
+#     _arguments "1: :($comp)"
+# fi
+#

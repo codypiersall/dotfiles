@@ -1,0 +1,7 @@
+#compdef setgoto rmgoto
+
+_goto() {
+    comp="$(cd ~/.goto; ls *[^~])"
+    _arguments "1: :($comp)"
+}
+_goto "$@"
