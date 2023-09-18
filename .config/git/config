@@ -41,3 +41,5 @@
 [user]
 	email = cody@ou.edu
 	name = Cody Piersall
+[init]
+    defaultBranch = master
