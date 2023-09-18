@@ -112,6 +112,7 @@ function fix_pdf_screenshot() {
 }
 pathadd "$HOME/.local/bin"
 pathadd "$HOME/.cargo/bin"
+pathadd "$HOME/go/bin"
 
 function initgit() {
     git init
@@ -139,3 +140,6 @@ function countdown(){
 if [ -e "$HOME/.config/broot/launcher/bash/br" ]; then
     source "$HOME/.config/broot/launcher/bash/br"
 fi
+
+alias vimdiff='nvim -d'
+export CMAKE_EXPORT_COMPILE_COMMANDS=on
