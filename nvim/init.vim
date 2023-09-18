@@ -236,6 +236,8 @@ nnoremap <Leader>y "+yy
 nnoremap <Leader>g :call gitblame#echo()<CR>
 nnoremap <Leader>m :NERDTreeToggle<CR>
 
+nnoremap <Leader>> <C-W>>
+nnoremap <Leader>< <C-W><
 
 " These are the generated ctags for the Linux source.
 set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
