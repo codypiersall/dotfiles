@@ -239,6 +239,9 @@ nnoremap <Leader>m :NERDTreeToggle<CR>
 nnoremap <Leader>> <C-W>>
 nnoremap <Leader>< <C-W><
 
+nnoremap <Leader><Leader>> 10<C-W>>
+nnoremap <Leader><Leader>< 10<C-W><
+
 " These are the generated ctags for the Linux source.
 set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
 au BufNewFile,BufRead *.i set filetype=swig

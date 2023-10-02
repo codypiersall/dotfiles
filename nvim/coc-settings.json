@@ -8,8 +8,6 @@
 
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
-    "clangd.trace.file": "/home/cody/clangd_log.txt",
-
     "languageserver": {
         /*
         "hdlChecker": {
