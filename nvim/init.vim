@@ -13,6 +13,22 @@ let using_ycm = 0
 " keys.
 let mapleader=","
 
+" We're going to define single-letter keymaps, so don't try to define them
+" in the terminal window.  The debugger CLI should continue accepting text commands.
+function! NvimGdbNoTKeymaps()
+  tnoremap <silent> <buffer> <esc> <c-\><c-n>
+endfunction
+
+let g:nvimgdb_config_override = {
+  \ 'key_next': 'n',
+  \ 'key_step': 's',
+  \ 'key_finish': 'f',
+  \ 'key_continue': 'c',
+  \ 'key_until': 'u',
+  \ 'key_breakpoint': 'b',
+  \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
+  \ }
+
 let g:black_linelength = 88
 " let g:black_skip_string_normalization = 1
 let g:black_string_normalization = "false"
@@ -45,8 +61,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
 " excellent python syntax highlighting
 " Plug 'numirias/semshi'
-" color scheme
+" color schemes
 Plug 'hardcoreplayers/oceanic-material'
+Plug 'rmehri01/onenord.nvim', {'branch': 'main'}
+Plug 'projekt0n/github-nvim-theme'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+
 Plug 'cespare/vim-toml'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'embear/vim-localvimrc'
@@ -97,6 +117,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 " https://github.com/euclio/vim-markdown-composer
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+" GDB integration
+Plug 'sakhnik/nvim-gdb'
 
 " snippet support
 if has('python3')
@@ -189,6 +211,7 @@ set wildmode=longest,list,full  "bash-like completion
 set wildmenu        " tab-completion menu.
 
 inoremap jk <Esc>
+tmap jk <Esc>
 filetype plugin indent on
 syntax on
 set ruler
@@ -411,7 +434,8 @@ if using_ycm && has('python3')
     exec 'so ' . stdpath('config') . '/ycm.vim'
 endif
 
-colorscheme oceanic_material
+" colorscheme oceanic_material
+colorscheme catppuccin-mocha
 
 " disable relative line numbers whenever out of buffer
 augroup BgHighlight
