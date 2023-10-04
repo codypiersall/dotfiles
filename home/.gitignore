@@ -70,3 +70,6 @@ xvlog.pb
 # binary numpy array data
 *.npy
 .cache
+
+# gdb config
+.gdbinit
