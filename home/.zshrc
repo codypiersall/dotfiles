@@ -5,6 +5,9 @@ ZSH_THEME="mine"
 plugins=(ubuntu git ripgrep fd)
 fpath=($ZSH_CUSTOM/completion $fpath)
 ZSH_DISABLE_COMPFIX=true
+HISTSIZE=999999999
+SAVEHIST=$HISTSIZE
+
 source $ZSH/oh-my-zsh.sh
 
 # https://stackoverflow.com/a/36044470/1612701
