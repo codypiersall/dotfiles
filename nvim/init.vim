@@ -59,6 +59,7 @@ let g:python_highlight_all = 1
 " show modified/added lines
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
+Plug 'rafi/awesome-vim-colorschemes'
 " excellent python syntax highlighting
 " Plug 'numirias/semshi'
 " color schemes
@@ -435,7 +436,7 @@ if using_ycm && has('python3')
 endif
 
 " colorscheme oceanic_material
-colorscheme catppuccin-mocha
+colorscheme afterglow
 
 " disable relative line numbers whenever out of buffer
 augroup BgHighlight
