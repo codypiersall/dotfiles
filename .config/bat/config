@@ -2,3 +2,5 @@
 --map-syntax "*.vh:Verilog"
 --map-syntax "*.svh:Verilog"
 --map-syntax ".lvimrc:VimL"
+--map-syntax ".zshrc_local:Bourne Again Shell (bash)"
+--map-syntax ".bashrc_local:Bourne Again Shell (bash)"
