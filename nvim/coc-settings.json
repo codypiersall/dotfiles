@@ -2,6 +2,8 @@
     "diagnostic.checkCurrentLine": true,
     "diagnostic.enableMessage": "always",
     "diagnostic.enable": true,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.virtualText": true,
 
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
