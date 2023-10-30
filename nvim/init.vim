@@ -446,5 +446,6 @@ augroup BgHighlight
 augroup END
 
 " highlight status bar of main window differently than othes.
-highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
-highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+" highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+" highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+hi CocInlayHint guifg=gray
