@@ -18,6 +18,9 @@ fi
 mkdir ~/dev
 git clone https://Gogh-Co/Gogh ~/dev/Gogh
 sudo apt install -y dconf-cli uuid-runtime
+# neovim repository
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+sudo apt update
 
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # don't forget to run install with Ctrl+B-I in Tmux!
@@ -41,5 +44,7 @@ mkdir ~/.vimjunk
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 110
+sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 110
 sudo update-alternatives --set vim /usr/bin/nvim
 sudo update-alternatives --set editor /usr/bin/nvim
