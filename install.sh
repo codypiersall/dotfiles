@@ -9,18 +9,22 @@ if [ ! -e "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-if ! which npm; then
-    curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-    sudo apt-get install -y nodejs
-    sudo npm install -g yarn
-fi
+# neovim repository
+sudo add-apt-repository ppa:neovim-ppa/unstable -y
+
+# installing nodejs: https://github.com/nodesource/distributions
+sudo apt install -y ca-certificates curl gnupg
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+# even-numbered node releases are LTS
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+sudo apt update
+sudo apt install nodejs -y
 
 mkdir ~/dev
 git clone https://Gogh-Co/Gogh ~/dev/Gogh
 sudo apt install -y dconf-cli uuid-runtime
-# neovim repository
-sudo add-apt-repository ppa:neovim-ppa/unstable -y
-sudo apt update
 
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # don't forget to run install with Ctrl+B-I in Tmux!
@@ -44,6 +48,7 @@ mkdir ~/.vimjunk
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+./install-rust-stuff.sh
 sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 110
 sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 110
 sudo update-alternatives --set vim /usr/bin/nvim
