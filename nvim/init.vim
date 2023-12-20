@@ -19,6 +19,8 @@ function! NvimGdbNoTKeymaps()
   tnoremap <silent> <buffer> <esc> <c-\><c-n>
 endfunction
 
+let g:vim_markdown_folding_disabled = 1
+
 let g:nvimgdb_config_override = {
   \ 'key_next': 'n',
   \ 'key_step': 's',
@@ -29,9 +31,9 @@ let g:nvimgdb_config_override = {
   \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
   \ }
 
-let g:black_linelength = 88
+" let g:black_linelength = 88
 " let g:black_skip_string_normalization = 1
-let g:black_string_normalization = "false"
+" let g:black_string_normalization = "false"
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
@@ -100,7 +102,7 @@ if using_ycm && has('python3')
     Plug 'Valloric/YouCompleteMe'
 endif
 if using_coc
-    Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+    Plug 'neoclide/coc.nvim', {'do': 'npm ci'}
 endif
 " Plug 'vim-scripts/Conque-GDB'
 Plug 'jceb/vim-orgmode'
@@ -120,6 +122,9 @@ Plug 'christoomey/vim-conflicted'
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 " GDB integration
 Plug 'sakhnik/nvim-gdb'
+
+" dmesg dumps
+Plug 'eismog/vim-dmesg'
 
 " snippet support
 if has('python3')
