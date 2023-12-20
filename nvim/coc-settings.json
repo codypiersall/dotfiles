@@ -7,6 +7,8 @@
 
     "python.analysis.autoImportCompletions": true,
     "python.analysis.autoSearchPaths": true,
+    "pyright.inlayHints.variableTypes": false,
+    "inlayHint.enable": false,
 
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
