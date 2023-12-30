@@ -23,7 +23,7 @@ sudo apt update
 sudo apt install nodejs -y
 
 mkdir ~/dev
-git clone https://Gogh-Co/Gogh ~/dev/Gogh
+git clone https://github.com/Gogh-Co/Gogh ~/dev/Gogh
 sudo apt install -y dconf-cli uuid-runtime
 
 git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
