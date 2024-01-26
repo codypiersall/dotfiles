@@ -394,7 +394,7 @@ augroup END
 vnoremap // y/\V<C-r>=escape(@",'/\')<CR><CR>
 let g:codi#width = 72
 
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
 
 set encoding=utf-8
 
@@ -449,6 +449,9 @@ augroup BgHighlight
     autocmd WinEnter * set relativenumber
     autocmd WinLeave * set norelativenumber
 augroup END
+
+" Allow git status *and* linenumbers to both be present
+set signcolumn=yes
 
 " highlight status bar of main window differently than othes.
 " highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
