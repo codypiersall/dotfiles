@@ -1,4 +1,15 @@
-PS1='\n[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]:bash] \[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e[33m\]\w \[\e[0m\]\n\$ '
+function virtualenv_info(){
+    # Get Virtual Env
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        # Strip out the path and just leave the env name
+        venv="${VIRTUAL_ENV##*/}"
+    else
+        # In case you don't have one activated
+        venv=''
+    fi
+    [[ -n "$venv" ]] && echo "($venv) "
+}
+PS1='\n[\[\e[31m\]\D{%I:%M%p}\[\e[0m\]:bash] $(virtualenv_info)\[\e[92m\]\u\[\e[94m\]@\[\e[96m\]\h \[\e[33m\]\w \[\e[0m\]\n\$ '
 
 # aliases that in zsh are provided by git plugin
 alias gb='git branch'
