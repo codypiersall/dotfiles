@@ -20,6 +20,8 @@ function! NvimGdbNoTKeymaps()
 endfunction
 
 let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_fenced_languages = ['json=json5']
+let g:black_virtualenv = "~/.envs/neovim"
 
 let g:nvimgdb_config_override = {
   \ 'key_next': 'n',
@@ -30,10 +32,6 @@ let g:nvimgdb_config_override = {
   \ 'key_breakpoint': 'b',
   \ 'set_tkeymaps': "NvimGdbNoTKeymaps",
   \ }
-
-" let g:black_linelength = 88
-" let g:black_skip_string_normalization = 1
-" let g:black_string_normalization = "false"
 
 let g:rustfmt_command = "rustup run stable rustfmt"
 
