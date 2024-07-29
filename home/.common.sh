@@ -60,6 +60,9 @@ function cgrep () {
 function pathadd() {
     if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
         PATH="$1:${PATH:+"$PATH:"}"
+        # remove double :: and trailing : (which add cwd to path)
+        PATH=$(echo $PATH | sed "s/::/:/g" | sed "s/:$//g")
+
     fi
 }
 
@@ -145,4 +148,3 @@ alias vimdiff='nvim -d'
 export CMAKE_EXPORT_COMPILE_COMMANDS=on
 export MAKEFLAGS="-j $(nproc)"
 export PYTHONBREAKPOINT=ipdb.set_trace
-
