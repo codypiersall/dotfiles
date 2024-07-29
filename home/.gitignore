@@ -71,5 +71,7 @@ xvlog.pb
 *.npy
 .cache
 
+.gitlab-ci-local
+
 # gdb config
 .gdbinit
