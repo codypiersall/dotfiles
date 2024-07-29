@@ -39,12 +39,14 @@ sudo apt install -y xclip
 
 # dev stuff
 sudo apt install -y build-essential python3-dev python3-virtualenvwrapper
+sudo apt install -y jq
 
 ./mksymlinks
 touch ~/.zshrc_local
 touch ~/.bashrc_local
 mkdir -p ~/.goto
 mkdir ~/.vimjunk
+mkdir -p ~/.local/bin
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
