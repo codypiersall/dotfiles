@@ -2,7 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_CUSTOM="$HOME/.zsh_custom"
 ZSH_THEME="mine"
-plugins=(ubuntu git ripgrep fd)
+plugins=(ubuntu git rust)
 fpath=($ZSH_CUSTOM/completion $fpath)
 ZSH_DISABLE_COMPFIX=true
 HISTSIZE=999999999
