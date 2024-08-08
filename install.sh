@@ -38,7 +38,7 @@ sudo apt install -y neovim
 sudo apt install -y xclip
 
 # dev stuff
-sudo apt install -y build-essential python3-dev python3-virtualenvwrapper
+sudo apt install -y build-essential python3-dev python3-virtualenvwrapper cmake ninja-build clangd
 sudo apt install -y jq
 
 ./mksymlinks
