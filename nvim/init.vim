@@ -328,6 +328,7 @@ let g:wstrip_auto = 1
 
 function PyFile()
     setlocal foldmethod=indent
+    setlocal tw=100
     normal zR
 endfunction
 
@@ -456,3 +457,9 @@ set signcolumn=yes
 " highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
 " highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
 hi CocInlayHint guifg=gray
+
+autocmd BufNewFile,BufRead *.json set ft=json5
+
+" https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
+nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
