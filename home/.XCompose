@@ -106,4 +106,8 @@ include "%L"
 # Odd freak:
 <Multi_key> <g> <v> <p> <s> :   "ᴪ"    U1D2A    # GREEK LETTER SMALL CAPITAL PSI
 
+# Emoji
+<Multi_key> <r> <o> <f> <l> : "🤣" U1f923  # rolling on floor laughing
 
+<Multi_key> <c> <m> : "✅" U2705  # Check Mark Button
+<Multi_key> <c> <x> : "❌" U274C  # Red X
