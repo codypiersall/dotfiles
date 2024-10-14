@@ -43,3 +43,5 @@
 	name = Cody Piersall
 [init]
     defaultBranch = master
+[rerere]
+	enabled = true
