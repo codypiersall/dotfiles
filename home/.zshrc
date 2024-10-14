@@ -123,6 +123,12 @@ function ncf() {
     cat "$1" | pv | netcat 192.168.2.2 7000
 }
 
+if which rg > /dev/null; then
+    if [ -e "$HOME/.zsh_custom/completion/_rg" ]; then
+        rg --generate complete-zsh > "$HOME/.zsh_custom/completion/_rg"
+    fi
+fi
+
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
 # 
