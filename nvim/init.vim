@@ -44,17 +44,6 @@ if using_ale
     Plug 'dense-analysis/ale'
 endif
 
-" https://github.com/euclio/vim-markdown-composer
-function! BuildComposer(info)
-  if a:info.status != 'unchanged' || a:info.force
-    if has('nvim')
-      !cargo build --release --locked
-    else
-      !cargo build --release --locked --no-default-features --features json-rpc
-    endif
-  endif
-endfunction
-
 let g:python_highlight_all = 1
 " show modified/added lines
 Plug 'airblade/vim-gitgutter'
@@ -116,8 +105,7 @@ Plug 'dzeban/vim-log-syntax'
 Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
-" https://github.com/euclio/vim-markdown-composer
-Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 " GDB integration
 Plug 'sakhnik/nvim-gdb'
 
@@ -262,7 +250,6 @@ nnoremap <Leader>e :ls<CR>:e<Space>
 
 nnoremap <Leader>y "+yy
 nnoremap <Leader>g :call gitblame#echo()<CR>
-nnoremap <Leader>m :NERDTreeToggle<CR>
 
 nnoremap <Leader>> <C-W>>
 nnoremap <Leader>< <C-W><
@@ -275,7 +262,6 @@ set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
 au BufNewFile,BufRead *.i set filetype=swig
 "au BufNewFile,BufRead *.sv set filetype=verilog
 
-let mapleader=","
 runtime macros/matchit.vim
 
 function! PropertyFunction(name)
@@ -460,6 +446,7 @@ hi CocInlayHint guifg=gray
 
 autocmd BufNewFile,BufRead *.json set ft=json5
 
+nnoremap <Leader>m <Plug>MarkdownPreviewToggle
 " https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
