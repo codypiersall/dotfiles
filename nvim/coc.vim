@@ -148,7 +148,7 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " make root where the setup.py script is
-au FileType python let b:coc_root_patterns = ['setup.py', '.git', '.env']
+au FileType python let b:coc_root_patterns = ['setup.py', '.git', '.env', 'pyproject.toml']
 
 
 
