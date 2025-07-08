@@ -261,6 +261,7 @@ nnoremap <Leader><Leader>< 10<C-W><
 set tags+=/usr/local/include/tags,~/Dev/msgpack-c/src/tags,/usr/include/tags
 au BufNewFile,BufRead *.i set filetype=swig
 "au BufNewFile,BufRead *.sv set filetype=verilog
+let mapleader=","
 
 runtime macros/matchit.vim
 
@@ -446,7 +447,8 @@ hi CocInlayHint guifg=gray
 
 autocmd BufNewFile,BufRead *.json set ft=json5
 
-nnoremap <Leader>m <Plug>MarkdownPreviewToggle
+nnoremap <space>m <Plug>MarkdownPreviewToggle
 " https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+
