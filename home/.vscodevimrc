@@ -1,0 +1,33 @@
+inoremap jk <Esc>
+
+let mapleader=" "
+
+nnoremap <space>j <C-W><C-J>
+nnoremap <space>k <C-W><C-K>
+nnoremap <space>l <C-W><C-L>
+nnoremap <space>h <C-W><C-H>
+nnoremap <C-j> <C-W><C-J>
+nnoremap <C-k> <C-W><C-K>
+nnoremap <C-l> <C-W><C-L>
+nnoremap <C-h> <C-W><C-H>
+nnoremap <space>= <C-W>=
+
+nnoremap <space>w :w<CR>
+nnoremap <space>n :bn<CR>
+nnoremap <space>p :bp<CR>
+nnoremap <space>d :Bd<CR>
+nnoremap <space>x :x<CR>
+nnoremap <space>q :q<CR>
+
+nnoremap <space>tn :tabn<CR>
+nnoremap <space>tp :tabp<CR>
+nnoremap <space>z <C-z>
+
+nnoremap <C-TAB> :tabn<CR>
+nnoremap <C-S-TAB> :tabp<CR>
+" Fuzzy Finder, ripgrep, tag search
+
+nnoremap <space>b :ls<CR>:b<Space>
+nnoremap <space>e :ls<CR>:e<Space>
+
+nnoremap <space>y "+yy
