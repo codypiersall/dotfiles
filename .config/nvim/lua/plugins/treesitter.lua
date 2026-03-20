@@ -22,6 +22,9 @@ return {
         dependencies = { 'nvim-treesitter/nvim-treesitter' },
         ---@module 'treesitter-modules'
         ---@type ts.mod.UserConfig
-        opts = {},
+        opts = {
+            highlight = { enable = true},
+            incremental_selection = {enable = true},
+        },
     },
 }
