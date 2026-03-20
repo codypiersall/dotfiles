@@ -442,6 +442,10 @@ set updatetime=300
 " Don't source coc *and* ale
 if using_coc
     exec 'so ' . stdpath('config') . '/coc.vim'
+    " highlight status bar of main window differently than othes.
+    " highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+    " highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
+    hi CocInlayHint guifg=gray
 endif
 
 " colorscheme oceanic_material
@@ -457,10 +461,6 @@ augroup END
 " Allow git status *and* linenumbers to both be present
 set signcolumn=yes
 
-" highlight status bar of main window differently than othes.
-" highlight StatusLineNC cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
-" highlight StatusLine cterm=bold ctermfg=white ctermbg=darkgray guibg=#333333
-hi CocInlayHint guifg=gray
 
 autocmd BufNewFile,BufRead *.json set ft=json5
 
