@@ -1,1 +1,0 @@
-/home/cody/.dotfiles/nvim/nvim_config.lua
