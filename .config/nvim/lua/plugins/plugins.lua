@@ -5,8 +5,17 @@ return {
     { "rhysd/committia.vim" },
     { "MunifTanjim/nui.nvim" },
     { "nvim-lua/plenary.nvim" },
-    { "nvim-tree/nvim-web-devicons" },
-    { "nvim-neo-tree/neo-tree.nvim", branch = "v3.x"},
+    { "nvim-neo-tree/neo-tree.nvim", 
+      branch = "v3.x", 
+      opts = {
+          filesystem = {
+              filtered_items = {
+                  visible = true,
+                  hide_dotfiles = false,
+              }
+          }
+      },
+    },
     { "tweekmonster/wstrip.vim" },
     { "jesseleite/vim-agriculture" },
     { "ibhagwan/fzf-lua",
