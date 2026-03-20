@@ -1,12 +1,6 @@
 return {
     { "nvim-tree/nvim-web-devicons", lazy = true, opts = {} },
     { "airblade/vim-gitgutter" },
-    { "danilo-augusto/vim-afterglow", config = function()
-        -- Optional: set global options before loading the colorscheme
-        vim.g.afterglow_italic_comments = 1 -- Example option
-        vim.cmd.colorscheme("afterglow")
-	  end,
-	},
     { "psf/black" },
     { "rhysd/committia.vim" },
     { "MunifTanjim/nui.nvim" },
