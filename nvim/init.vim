@@ -5,9 +5,8 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 
 " change these to enable/disable coc, ale, and ycm
-let using_ale = 0
 let using_coc = 1
-let using_ycm = 0
+
 
 " Set mapleader to something other than below so plugins do not overwrite my
 " keys.
@@ -39,12 +38,14 @@ let g:oceanic_material_background = 'darker'
 
 let g:tex_flavor = 'latex'
 let g:python3_host_prog = $HOME . "/.envs/neovim/bin/python"
-call plug#begin()
-if using_ale
-    Plug 'dense-analysis/ale'
-endif
-
 let g:python_highlight_all = 1
+
+" Disable Netrw (Neovim's default file explorer)
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
+
+call plug#begin()
 " show modified/added lines
 Plug 'airblade/vim-gitgutter'
 Plug 'qpkorr/vim-bufkill'
@@ -80,14 +81,15 @@ Plug 'rhysd/committia.vim'
 Plug 'rust-lang/rust.vim'
 " support for Sphinx style rst files.
 Plug 'Rykka/riv.vim'
-Plug 'scrooloose/nerdtree'
+" nui and plenary are for nvim-neo-tree
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-neo-tree/neo-tree.nvim', {'branch': 'v3.x'}
 Plug 'tweekmonster/wstrip.vim'
 Plug 'vhda/verilog_systemverilog.vim'
 Plug 'jesseleite/vim-agriculture'
 Plug 'vim-python/python-syntax'
-if using_ycm && has('python3')
-    Plug 'Valloric/YouCompleteMe'
-endif
 if using_coc
     Plug 'neoclide/coc.nvim', {'do': 'npm ci'}
 endif
@@ -106,8 +108,10 @@ Plug 'zivyangll/git-blame.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-conflicted'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
-" GDB integration
-Plug 'sakhnik/nvim-gdb'
+" debugger support
+Plug 'mfussenegger/nvim-dap'
+Plug 'nvim-neotest/nvim-nio'
+Plug 'rcarriga/nvim-dap-ui'
 
 " dmesg dumps
 Plug 'eismog/vim-dmesg'
@@ -118,6 +122,25 @@ if has('python3')
     " Plug 'honza/vim-snippets'
 end
 call plug#end()
+
+" Basic Neo-tree configuration in Lua
+lua << EOF
+require("neo-tree").setup({
+  -- add your configuration options here
+  window = {
+    position = "left",
+    width = 30,
+  },
+  filesystem = {
+    hijack_netrw_symbols = false, -- Recommended when using plug
+    use_gitignore = true,
+    -- other filesystem options
+  },
+  -- other configurations
+})
+EOF
+
+nnoremap \ :Neotree<Enter>
 
 " Trigger config for snippets
 " commented out for now since it interferes with coc completion
@@ -230,7 +253,7 @@ nnoremap <Leader>= <C-W>=
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
-nnoremap <Leader>d :BD<CR>
+nnoremap <Leader>d :bn <bar> bd #<CR>
 nnoremap <Leader>x :x<CR>
 nnoremap <Leader>q :q<CR>
 
@@ -420,12 +443,6 @@ set updatetime=300
 if using_coc
     exec 'so ' . stdpath('config') . '/coc.vim'
 endif
-if using_ale
-    exec 'so ' . stdpath('config') . '/ale.vim'
-endif
-if using_ycm && has('python3')
-    exec 'so ' . stdpath('config') . '/ycm.vim'
-endif
 
 " colorscheme oceanic_material
 colorscheme afterglow
@@ -451,8 +468,8 @@ nnoremap <space>m <Plug>MarkdownPreviewToggle
 " https://stackoverflow.com/questions/20975928/moving-the-cursor-through-long-soft-wrapped-lines-in-vim
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
+nnoremap <space>rr :Rg <C-r>/<Enter>
 
 " resize window
-nnoremap > <C-W>>
-nnoremap < <C-W><
 set nofoldenable
+source $HOME/.config/nvim/nvim_config.lua
