@@ -111,3 +111,4 @@ include "%L"
 
 <Multi_key> <c> <m> : "✅" U2705  # Check Mark Button
 <Multi_key> <c> <x> : "❌" U274C  # Red X
+<Multi_key> <s> <c> <r> : "😱" U1F631  # Red X
