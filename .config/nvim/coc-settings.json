@@ -12,6 +12,16 @@
 
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
+    "Lua": {
+      "workspace.library": [
+        "/usr/share/nvim/runtime/lua",
+        "/usr/share/nvim/runtime/lua/vim",
+        "/usr/share/nvim/runtime/lua/vim/lsp",
+      ],
+      "diagnostics": {
+        "globals": ["vim"]
+      }
+    },
     "languageserver": {
         /*
         "hdlChecker": {
@@ -30,6 +40,7 @@
             "filetypes": ["verilog", "systemverilog"]
         }
         */
+
     }
 }
 
