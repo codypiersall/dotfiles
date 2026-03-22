@@ -1,3 +1,4 @@
+vim.g.wstrip_auto = 1
 return {
     { "nvim-tree/nvim-web-devicons", lazy = true, opts = {} },
     { "airblade/vim-gitgutter" },
