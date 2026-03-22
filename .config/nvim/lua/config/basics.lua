@@ -1,7 +1,7 @@
 -- basic vim configuration options
 vim.opt.compatible = false
 -- vim.opt.filetype = 'off'
-vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1 
+vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 vim.opt.termguicolors = true
 vim.opt.compatible = false
 vim.opt.number = true
@@ -30,6 +30,10 @@ vim.opt.backspace = "2"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.hidden = true
+vim.opt.backupdir = vim.fn.expand("$HOME/.vimjunk")
+vim.opt.directory = vim.fn.expand("$HOME/.vimjunk")
+vim.opt.undodir = vim.fn.expand("$HOME/.vimjunk")
+vim.opt.signcolumn = "yes"
 -- vim.opt.filetype = 'on'
 
 vim.filetype.add({
