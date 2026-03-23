@@ -1,3 +1,4 @@
+HOME = os.getenv("HOME") .. "/"
 require("config.basics")
 require("config.lazy")
 require("config.keymap")
