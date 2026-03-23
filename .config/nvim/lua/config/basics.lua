@@ -1,3 +1,4 @@
+vim.g.python3_host_prog = HOME .. "/.envs/neovim/bin/python"
 -- basic vim configuration options
 vim.opt.compatible = false
 -- vim.opt.filetype = 'off'
@@ -30,9 +31,10 @@ vim.opt.backspace = "2"
 vim.opt.splitbelow = true
 vim.opt.splitright = true
 vim.opt.hidden = true
-vim.opt.backupdir = vim.fn.expand("$HOME/.vimjunk")
-vim.opt.directory = vim.fn.expand("$HOME/.vimjunk")
-vim.opt.undodir = vim.fn.expand("$HOME/.vimjunk")
+local vimjunk = HOME .. ".vimjunk"
+vim.opt.backupdir = vimjunk
+vim.opt.directory = vimjunk
+vim.opt.undodir = vimjunk
 vim.opt.signcolumn = "yes"
 -- vim.opt.filetype = 'on'
 
