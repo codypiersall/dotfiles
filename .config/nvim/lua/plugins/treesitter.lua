@@ -18,6 +18,8 @@ return {
                 "re2c",
                 "regex",
                 "rust",
+                "vim",
+                "vimscript",
             },
             highlight = {enabled = true },
             indent = {enabled = true },
