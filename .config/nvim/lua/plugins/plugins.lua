@@ -1,5 +1,5 @@
 vim.g.wstrip_auto = 1
-return {
+local t = {
     { "nvim-tree/nvim-web-devicons", lazy = true, opts = {} },
     { "airblade/vim-gitgutter" },
     { "psf/black" },
@@ -38,10 +38,12 @@ return {
 
     { "junegunn/vim-easy-align" },
     -- TODO: replace coc?
-    { "neoclide/coc.nvim", branch = "release" },
     -- highlight word under cursor: vim-illuminate or nvim-cursorword
     { "RRethy/vim-illuminate" },
     -- { "nvim-mini/mini.cursorword" },
-
 }
 
+if LANGUAGE_SERVER == "coc" then
+    table.insert(t, { "neoclide/coc.nvim", branch = "release" })
+end
+return t
