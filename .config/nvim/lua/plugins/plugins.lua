@@ -4,10 +4,11 @@ return {
     { "airblade/vim-gitgutter" },
     { "psf/black" },
     { "rhysd/committia.vim" },
+    -- infrastructure plugin needed by other things
     { "MunifTanjim/nui.nvim" },
     { "nvim-lua/plenary.nvim" },
-    { "nvim-neo-tree/neo-tree.nvim", 
-      branch = "v3.x", 
+    { "nvim-neo-tree/neo-tree.nvim",
+      branch = "v3.x",
       opts = {
           filesystem = {
               filtered_items = {
@@ -34,7 +35,13 @@ return {
     { "mfussenegger/nvim-dap" },
     { "nvim-neotest/nvim-nio" },
     { "rcarriga/nvim-dap-ui" },
+
     { "junegunn/vim-easy-align" },
+    -- TODO: replace coc?
     { "neoclide/coc.nvim", branch = "release" },
+    -- highlight word under cursor: vim-illuminate or nvim-cursorword
+    { "RRethy/vim-illuminate" },
+    -- { "nvim-mini/mini.cursorword" },
+
 }
 
