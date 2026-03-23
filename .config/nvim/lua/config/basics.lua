@@ -36,6 +36,7 @@ vim.opt.backupdir = vimjunk
 vim.opt.directory = vimjunk
 vim.opt.undodir = vimjunk
 vim.opt.signcolumn = "yes"
+vim.opt.updatetime = 300
 -- vim.opt.filetype = 'on'
 
 vim.filetype.add({
