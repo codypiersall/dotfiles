@@ -5,13 +5,13 @@ dap.adapters.gdb = {
   args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
 }
 
-local dap = require("dap")
 dap.configurations.c = {
   {
-    name = "TESTS",
+
+    name = "/home/cody/projects/horus/sw/ncmd/build_tests2/tests",
     type = "gdb",
     request = "launch",
-    program = "/home/cody/projects/horus/sw/ncmd/build_tests/tests",
+    program = "/home/cody/projects/horus/sw/ncmd/build_tests2/tests",
     args = {}, -- provide arguments if needed
     cwd = "${workspaceFolder}",
     stopAtBeginningOfMainSubprogram = true,
