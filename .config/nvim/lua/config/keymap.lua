@@ -57,5 +57,7 @@ nm("<Leader><", "<C-W><")
 nm("<Leader><Leader>>", "10<C-W>>")
 nm("<Leader><Leader><", "10<C-W><")
 
+nm("<Leader>a", "lua vim.diagnostic.setloclist()")
+
 vim.g.mapleader = ","
 nm("\\", ":Neotree toggle<Enter>")
