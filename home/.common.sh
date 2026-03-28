@@ -148,4 +148,5 @@ alias vimdiff='nvim -d'
 export CMAKE_EXPORT_COMPILE_COMMANDS=on
 export CMAKE_COLOR_DIAGNOSTICS=on
 export MAKEFLAGS="-j $(nproc)"
+export CMAKE_BUILD_PARALLEL_LEVEL="$(nproc)"
 export PYTHONBREAKPOINT=ipdb.set_trace

@@ -69,7 +69,7 @@ Plug 'justinmk/vim-syntax-extra'
 Plug 'kergoth/vim-bitbake'
 Plug 'Cognoscan/vim-vhdl'
 Plug 'lambdalisue/vim-cython-syntax'
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', {'tag': 'v2.15'}
 Plug 'majutsushi/tagbar'
 " next two are markdown plugins
 Plug 'godlygeek/tabular'
@@ -264,7 +264,7 @@ nnoremap <Leader>z <C-z>
 nnoremap <C-TAB> :tabn<CR>
 nnoremap <C-S-TAB> :tabp<CR>
 " Fuzzy Finder, ripgrep, tag search
-nnoremap <Leader>f :Files<CR>
+nnoremap <space>f :Files<CR>
 nnoremap <Leader>r :RgRaw<Space>
 nnoremap <Leader>T :Tags<Space>
 
@@ -473,3 +473,4 @@ nnoremap <space>rr :Rg <C-r>/<Enter>
 " resize window
 set nofoldenable
 source $HOME/.config/nvim/nvim_config.lua
+nnoremap <space>f :Files<CR>
