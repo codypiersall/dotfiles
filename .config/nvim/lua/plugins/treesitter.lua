@@ -4,10 +4,20 @@ return {
         lazy = false,
         build = ':TSUpdate',
         opts = {
+            highlight = {enabled = true },
+            indent = {enabled = true },
+        },
+    },
+    {
+        'MeanderingProgrammer/treesitter-modules.nvim',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' },
+        ---@module 'treesitter-modules'
+        ---@type ts.mod.UserConfig
+        opts = {
             ensure_installed = {
                 "bash",
                 "c",
-                "c++",
+                "cpp",
                 "comment",
                 "doxygen",
                 "javascript",
@@ -19,18 +29,8 @@ return {
                 "regex",
                 "rust",
                 "vim",
-                "vimscript",
+                "vimdoc",
             },
-            highlight = {enabled = true },
-            indent = {enabled = true },
-        },
-    },
-    {
-        'MeanderingProgrammer/treesitter-modules.nvim',
-        dependencies = { 'nvim-treesitter/nvim-treesitter' },
-        ---@module 'treesitter-modules'
-        ---@type ts.mod.UserConfig
-        opts = {
             highlight = { enable = true},
             incremental_selection = {enable = true},
         },
