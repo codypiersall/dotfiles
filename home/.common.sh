@@ -77,7 +77,7 @@ alias zc='setopt noglob; zc_'
 alias vless='vim -u /usr/share/vim/vim74/macros/less.vim -'
 alias tmux0='tmuxp load 0'
 alias httpserver='python3 -m http.server'
-alias glogtime="git log --graph --pretty='%C(yellow)%h %C(green)%cd %C(white)%s%C(reset)' --date=local"
+alias glogtime="git log --graph --pretty='%C(yellow)%h %C(green)%cd %C(white) %an: %s%C(reset)' --date=local"
 alias psaf='ps -AF'
 alias grep="grep '--exclude=*'{~,.o,.so,.ko} --color=auto '--exclude-dir='{.git,.hg,.svn,.ipynb_checkpoints}"
 alias gitserver='git daemon --reuseaddr --base-path=. --export-all --verbose --enable=receive-pack'
