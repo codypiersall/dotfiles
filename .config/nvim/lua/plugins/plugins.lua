@@ -40,7 +40,15 @@ local t = {
     -- TODO: replace coc?
     -- highlight word under cursor: vim-illuminate or nvim-cursorword
     { "RRethy/vim-illuminate" },
-    -- { "nvim-mini/mini.cursorword" },
+    { "nvim-mini/mini.cursorword" },
+    { "iamcco/markdown-preview.nvim",
+      cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+      build = "cd app && npm install",
+      init = function()
+        vim.g.mkdp_filetypes = { "markdown" }
+      end,
+      ft = { "markdown" },
+    },
 }
 
 if LANGUAGE_SERVER == "coc" then
