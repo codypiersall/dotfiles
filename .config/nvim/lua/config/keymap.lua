@@ -1,6 +1,7 @@
 vim.g.mapleader = " "
 local km = vim.keymap.set
 
+-- wrapper functions for norman, insert, whatever t is, and visual
 local function nm(key, map)
 	km("n", key, map)
 end
@@ -13,10 +14,13 @@ local function tm(key, map)
 	km("t", key, map)
 end
 
+local function xm(key, map)
+	km("x", key, map)
+end
+
+-- the most important keybinding
 im("jk", "<Esc>")
-
 tm("jk", "<Esc>")
-
 -- window movements
 nm("<Leader>h", "<C-W><C-H>")
 nm("<Leader>j", "<C-W><C-J>")
@@ -56,6 +60,9 @@ nm("<Leader><", "<C-W><")
 
 nm("<Leader><Leader>>", "10<C-W>>")
 nm("<Leader><Leader><", "10<C-W><")
+
+nm("ga", "<Plug>(EasyAlign)")
+xm("ga", "<Plug>(EasyAlign)")
 
 vim.g.mapleader = ","
 nm("\\", ":Neotree toggle<Enter>")
