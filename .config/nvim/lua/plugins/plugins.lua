@@ -49,6 +49,19 @@ local t = {
       end,
       ft = { "markdown" },
     },
+    {"stevearc/conform.nvim", opts = {
+      formatters_by_ft = {
+        python = { "black" },
+      },
+      format_on_save = function(bufnr)
+        -- Only format if pyproject.toml exists
+        if not vim.fs.root(bufnr, { "pyproject.toml" }) then
+          return
+        end
+        return { timeout_ms = 500, lsp_fallback = true }
+      end,
+      }
+    }
 }
 
 if LANGUAGE_SERVER == "coc" then
