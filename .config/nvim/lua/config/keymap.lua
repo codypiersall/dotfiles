@@ -49,7 +49,8 @@ nm("<C-S-TAB>", ":tabp<CR>")
 
 -- Fuzzy Finder, ripgrep, tag search
 nm("<Leader>f", ":FzfLua files<CR>")
-nm("<Leader>r", ":FzfLua live_grep<CR>")
+nm("<Leader>r", ":FzfLua grep<CR>")
+nm("<Leader>rr", ":FzfLua grep_cword<CR>")
 nm("<Leader>b", ":FzfLua buffers<CR>")
 
 nm("<Leader>y", "\"+yy")
