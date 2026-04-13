@@ -23,10 +23,7 @@ local t = {
     { "ibhagwan/fzf-lua",
       -- optional for icon support
       dependencies = { "nvim-tree/nvim-web-devicons" },
-      config = function()
-        -- call setup or configure here
-        require("fzf-lua").setup({})
-      end
+      opts = {},
     },
     { "zivyangll/git-blame.vim" },
     { "tpope/vim-fugitive" },
