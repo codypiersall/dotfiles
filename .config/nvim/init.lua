@@ -1,5 +1,5 @@
 -- options are "nvim-lspconfig" or "coc"
-LANGUAGE_SERVER = "nvim-lspconfig"
+LANGUAGE_SERVER = "coc"
 HOME = os.getenv("HOME") .. "/"
 require("config.basics")
 require("config.lazy")
