@@ -44,6 +44,9 @@ local t = {
       init = function()
         vim.g.mkdp_filetypes = { "markdown" }
       end,
+      keys = {
+          { "<space>m", ":MarkdownPreviewToggle<CR>", mode="n",desc="markdown preview"},
+      },
       ft = { "markdown" },
     },
     {
