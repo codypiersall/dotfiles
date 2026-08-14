@@ -22,6 +22,7 @@ return {
                 "doxygen",
                 "javascript",
                 "lua",
+                "markdown",
                 "printf",
                 "python",
                 "query",
