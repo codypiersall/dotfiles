@@ -124,9 +124,7 @@ function ncf() {
 }
 
 if which rg > /dev/null; then
-    if [ -e "$HOME/.zsh_custom/completion/_rg" ]; then
-        rg --generate complete-zsh > "$HOME/.zsh_custom/completion/_rg"
-    fi
+    source <(rg --generate=complete-zsh)
 fi
 
 # added by travis gem
