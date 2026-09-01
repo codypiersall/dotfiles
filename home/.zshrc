@@ -127,6 +127,10 @@ if which rg > /dev/null; then
     source <(rg --generate=complete-zsh)
 fi
 
+if which ruff > /dev/null; then
+    source <(ruff generate-shell-completion zsh)
+fi
+
 # added by travis gem
 [ -f /home/cody/.travis/travis.sh ] && source /home/cody/.travis/travis.sh
 # 
