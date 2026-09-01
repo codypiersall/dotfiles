@@ -75,3 +75,6 @@ xvlog.pb
 
 # gdb config
 .gdbinit
+.gitlab-ci-local-variables.yml
+.gitlab-ci-local-env
+ccbuild
