@@ -45,6 +45,9 @@ function virtualenv_info(){
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
         venv="${VIRTUAL_ENV##*/}"
+        if [[ "$venv" == ".venv" ]]; then
+            venv="$(basename $(dirname ${VIRTUAL_ENV}))"
+        fi
     else
         # In case you don't have one activated
         venv=''
