@@ -5,16 +5,18 @@
     meld = difftool --tool=meld -y --dir-diff
 	assume = update-index --assume-unchanged
 	unassume = update-index --no-assume-unchanged
-	vimdiff = difftool
+	nvimdiff = difftool
 [core]
 	editor = nvim
 	autocrlf = input
 	pager = less -SFX
     excludesfile = ~/.gitignore
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 [difftool "meld"]
 	cmd = meld \"$LOCAL\" \"$REMOTE\"
+[difftool "nvimdiff"]
+    cmd = nvim -d \"$LOCAL\" \"$REMOTE\"
 [push]
 	default = simple
 [color]
