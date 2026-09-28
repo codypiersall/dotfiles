@@ -67,6 +67,7 @@ local t = {
         },
       },
     },
+    { "mpas/marp-nvim" },
     {"stevearc/conform.nvim", opts = {
       formatters_by_ft = {
         python = { "black" },
