@@ -1,26 +1,9 @@
 #! /bin/sh
-sudo apt install -y curl
-if [ ! -e "$HOME/.vim/autoload/plug.vim" ]; then
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-if [ ! -e "$HOME/.local/share/nvim/site/autoload/plug.vim" ]; then
-    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
 # neovim repository
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 
-# installing nodejs: https://github.com/nodesource/distributions
+sudo apt install -y tmux
 sudo apt install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-# even-numbered node releases are LTS
-NODE_MAJOR=24
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-sudo apt update
-sudo apt install nodejs -y
 
 mkdir ~/dev
 git clone https://github.com/Gogh-Co/Gogh ~/dev/Gogh
@@ -33,9 +16,9 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # for the tool pdftotext, useful in git diffs
 sudo apt install -y poppler-utils
 sudo apt install -y zsh
-sudo apt install -y vim
 sudo apt install -y neovim
 sudo apt install -y xclip
+sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 100
 
 # dev stuff
 sudo apt install -y build-essential python3-dev python3-virtualenvwrapper cmake ninja-build clangd
@@ -50,8 +33,16 @@ mkdir -p ~/.local/bin
 
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+export PATH="$PATH:$HOME/.cargo/bin"
 ./install-rust-stuff.sh
-sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 110
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 110
-sudo update-alternatives --set vim /usr/bin/nvim
-sudo update-alternatives --set editor /usr/bin/nvim
+
+# fast node manager
+curl -fsSL https://fnm.vercel.app/install | bash
+export PATH="$PATH:$HOME/.local/share/fnm"
+fnm install --lts
+fnm default lts-latest
+fnm use lts-latest
+
+# uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
