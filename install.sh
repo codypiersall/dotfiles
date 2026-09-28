@@ -34,6 +34,8 @@ mkdir -p ~/.local/bin
 # install rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 export PATH="$PATH:$HOME/.cargo/bin"
+rustup component add rust-src
+rustup component add rust-analyzer
 ./install-rust-stuff.sh
 
 # fast node manager
