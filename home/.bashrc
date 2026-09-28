@@ -85,3 +85,10 @@ function _zc() {
 
 source /etc/profile.d/bash_completion.sh
 alias zc='set -f; _zc'
+
+# fnm
+FNM_PATH="/home/cody/.local/share/fnm"
+if [ -d "$FNM_PATH" ]; then
+  export PATH="$FNM_PATH:$PATH"
+  eval "$(fnm env --shell bash)"
+fi
