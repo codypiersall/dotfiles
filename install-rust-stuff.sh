@@ -6,5 +6,6 @@ cargo binstall -y \
     bat \
     fd-find \
     ripgrep \
-    rusty-tags
+    rusty-tags \
+    tree-sitter-cli
 
