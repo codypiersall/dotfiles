@@ -9,6 +9,7 @@ function ln_dir_contents() {
     for fname in "$src_dir"/* "$src_dir"/.*; do
         base="$(basename $fname)"
         if [ "$base" = . -o "$base" = ..  -o "$base" = "*" ]; then
+            # don't link ".", ".." and "*" files
             continue
         fi
         echo ln -sfn "$fname" "$dest_dir/$(basename $fname)"
