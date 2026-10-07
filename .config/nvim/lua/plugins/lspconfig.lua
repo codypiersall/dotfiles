@@ -287,9 +287,7 @@ return {
         -- <c-k>: Toggle signature help
         --
         -- See :h blink-cmp-config-keymap for defining your own keymap
-        preset = 'enter',
-        ['<Tab>'] = {'select_next', 'snippet_forward', 'fallback'},
-        ['<S-Tab>'] = {'select_prev', 'snippet_backward', 'fallback'},
+        preset = 'super-tab',
 
         completion = {
             list = {
@@ -298,7 +296,7 @@ return {
                     auto_insert = true,
                 }
             }
-        }
+        },
 
         -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
@@ -318,6 +316,18 @@ return {
 
       sources = {
         default = { 'lsp', 'path', 'snippets' },
+        providers = {
+            path = {
+                name = 'Path',
+                module = 'blink.cmp.sources.path',
+                score_offset = 3,
+                opts = {
+                    trailing_slash = true,
+                    label_trailing_slash = true,
+                    show_hidden_files_by_default = true,
+                }
+            }
+        },
       },
 
       snippets = { preset = 'luasnip' },
