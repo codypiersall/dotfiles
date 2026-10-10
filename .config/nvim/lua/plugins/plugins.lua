@@ -74,10 +74,17 @@ local t = {
       },
       format_on_save = function(bufnr)
         -- Only format if pyproject.toml exists
-        if not vim.fs.root(bufnr, { "pyproject.toml" }) then
+        if vim.bo[bufnr].filetype == "python" and not vim.fs.root(bufnr, { "pyproject.toml" }) then
           return
         end
-        return { timeout_ms = 500, lsp_fallback = true }
+        local enabled_ft = {
+            cpp = false,
+            c = false,
+            python = true,
+        }
+        if enabled_ft[vim.bo[bufnr].filetype] then
+            return { timeout_ms = 500}
+        end
       end,
       }
     }
