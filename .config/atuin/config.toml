@@ -405,3 +405,6 @@ enabled = true
 
 [keymap.vim-normal]
 "left" = "return-selection"
+"right" = "return-selection"
+"backspace" = "return-selection"
+
