@@ -407,4 +407,5 @@ enabled = true
 "left" = "return-selection"
 "right" = "return-selection"
 "backspace" = "return-selection"
+"home" = "return-selection"
 
