@@ -161,3 +161,7 @@ if [ -e "$HOME/.atuin/bin/env" ]; then
     . "$HOME/.atuin/bin/env"
     eval "$(atuin init zsh)"
 fi
+
+if command -v direnv > /dev/null; then
+    eval "$(direnv hook zsh)"
+fi
