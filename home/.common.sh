@@ -3,7 +3,6 @@
 # .zshrc and .bashrc source this script.
 # python virtualenv stuff
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export WORKON_HOME=~/.envs
 export PROJECT_HOME=~/Dev
 export PYTHONSTARTUP=~/.pythonrc
@@ -17,22 +16,6 @@ export DISABLE_AUTO_TITLE='true'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export GIT_PROMPTINFO_ENABLED=1
 mkdir -p $WORKON_HOME
-
-# get virtualenvwrapper to work on different platforms
-if [ -e "/usr/share/virtualenvwrapper/virtualenvwrapper.sh" ]; then
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
-    source /usr/share/virtualenvwrapper/virtualenvwrapper.sh
-elif [ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
-    export VIRTUALENVWRAPPER_SCRIPT="$HOME/.local/bin/virtualenvwrapper.sh"
-    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/bin/virtualenv"
-    source "$HOME/.local/bin/virtualenvwrapper.sh"
-elif [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-    export VIRTUALENVWRAPPER_SCRIPT="/usr/local/bin/virtualenvwrapper.sh"
-    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
 
 # ripgrep is dumb and doesn't have a default config file.
 export RIPGREP_CONFIG_PATH="$HOME/.rgrc"
@@ -150,3 +133,4 @@ export CMAKE_COLOR_DIAGNOSTICS=on
 export MAKEFLAGS="-j $(nproc)"
 export CMAKE_BUILD_PARALLEL_LEVEL="$(nproc)"
 export PYTHONBREAKPOINT=ipdb.set_trace
+alias workon='uv-workon activate -n'

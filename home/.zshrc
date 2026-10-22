@@ -146,3 +146,10 @@ fi
 if command -v direnv > /dev/null; then
     eval "$(direnv hook zsh)"
 fi
+
+if command -v uv-workon > /dev/null; then
+    eval "$(uv-workon shell-config)"
+    eval "$(uv-workon --show-completion)"
+else
+    echo >&2 'Need to `uv tool install uv-workon`'
+fi
