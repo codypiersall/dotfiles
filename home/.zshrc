@@ -155,6 +155,11 @@ if command -v uv-workon > /dev/null; then
             cd "$(realpath $VIRTUAL_ENV)"/..
         fi
     }
+    function cdsitepackages() {
+        if [ -n "$VIRTUAL_ENV" ]; then
+            cd "$(realpath $VIRTUAL_ENV)"/lib/python*/site-packages
+        fi
+    }
 else
     echo >&2 'Need to `uv tool install uv-workon`'
 fi
