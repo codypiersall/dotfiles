@@ -124,7 +124,7 @@ function ncf() {
 }
 
 if which rg > /dev/null; then
-   eval $(rg --generate=complete-zsh)
+   source <(rg --generate=complete-zsh)
 fi
 
 if which ruff > /dev/null; then
