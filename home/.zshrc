@@ -150,6 +150,11 @@ fi
 if command -v uv-workon > /dev/null; then
     eval "$(uv-workon shell-config)"
     eval "$(uv-workon --show-completion)"
+    function cdvenv() {
+        if [ -n "$VIRTUAL_ENV" ]; then
+            cd "$(realpath $VIRTUAL_ENV)"/..
+        fi
+    }
 else
     echo >&2 'Need to `uv tool install uv-workon`'
 fi
