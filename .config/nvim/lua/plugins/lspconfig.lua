@@ -37,7 +37,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     -- Code action (refactor, fix)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
     -- References
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', 'gr', FzfLua.lsp_references, opts)
     -- Format buffer
     vim.keymap.set('n', ',f', function()
       vim.lsp.buf.format { async = true }
@@ -144,6 +144,7 @@ return {
       ---@type table<string, vim.lsp.Config>
       local servers = {
         clangd = {},
+        ty = {},
         -- gopls = {},
         -- pyright = {},
         rust_analyzer = {},
