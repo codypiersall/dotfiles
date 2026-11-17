@@ -144,10 +144,11 @@ return {
       ---@type table<string, vim.lsp.Config>
       local servers = {
         clangd = {},
-        ty = {},
+        -- ty = {},
         -- gopls = {},
-        -- pyright = {},
+        pyright = {},
         rust_analyzer = {},
+        slang_server = {},
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
         --    https://github.com/pmizio/typescript-tools.nvim
