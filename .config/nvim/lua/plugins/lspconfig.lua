@@ -147,6 +147,7 @@ return {
         -- ty = {},
         -- gopls = {},
         pyright = {},
+        neocmake = {},
         rust_analyzer = {},
         slang_server = {},
         --
